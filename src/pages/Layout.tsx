@@ -15,6 +15,10 @@ const Layout = () => {
   "controls controls"
   `,
         }}
+        templateColumns={{
+          base: "1fr",
+          lg: "350px 1fr",
+        }}
       >
         <Show above="lg">
           <GridItem area="nav" padding={2}>
