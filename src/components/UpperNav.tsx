@@ -1,20 +1,20 @@
 import { Card, CardBody, HStack, Heading } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
-import { RiHome5Fill } from "react-icons/ri";
+import { AiFillHome } from "react-icons/ai";
 
 const UpperNav = () => {
   return (
     <>
-      <Card>
+      <Card maxW="sm">
         <CardBody>
-          <HStack paddingY={1}>
-            <RiHome5Fill size="25px" />
-            <Heading fontSize="xl">Home</Heading>
+          <HStack paddingBottom={1}>
+            <AiFillHome />
+            <Heading fontSize="md">Home</Heading>
           </HStack>
-          <HStack paddingY={1}>
-            <BiSearch size="25px" />
-            <Heading fontSize="xl">Search</Heading>
-          </HStack>{" "}
+          <HStack paddingTop={1}>
+            <BiSearch />
+            <Heading fontSize="md">Search</Heading>
+          </HStack>
         </CardBody>
       </Card>
     </>

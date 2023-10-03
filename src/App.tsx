@@ -16,7 +16,7 @@ function App() {
         }}
       >
         <Show above="lg">
-          <GridItem area="nav" padding={3}>
+          <GridItem area="nav" padding={2}>
             <Navbar />
           </GridItem>
         </Show>
