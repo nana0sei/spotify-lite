@@ -7,13 +7,14 @@ const UpperNav = () => {
     <>
       <Card maxW="sm">
         <CardBody>
-          <HStack paddingBottom={1}>
-            <AiFillHome />
-            <Heading fontSize="md">Home</Heading>
+          <HStack>
+            <AiFillHome size="20px" />
+            <Heading fontSize="lg">Home</Heading>
           </HStack>
-          <HStack paddingTop={1}>
-            <BiSearch />
-            <Heading fontSize="md">Search</Heading>
+
+          <HStack paddingTop={5}>
+            <BiSearch size="20px" />
+            <Heading fontSize="lg">Search</Heading>
           </HStack>
         </CardBody>
       </Card>
