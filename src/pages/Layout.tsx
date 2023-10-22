@@ -26,7 +26,7 @@ const Layout = () => {
           </GridItem>
         </Show>
 
-        <GridItem area="main" bg="yellow.300">
+        <GridItem area="main">
           <Outlet />
         </GridItem>
 
