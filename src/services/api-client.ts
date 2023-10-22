@@ -12,31 +12,28 @@ const token = btoa(clientID + ":" + clientSecret);
 
 const getAuth = async () => {
   try {
-    //make post request to SPOTIFY API for access token, sending relavent info
     const token_url = "https://accounts.spotify.com/api/token";
 
     const response = await axios.post(token_url, {
       headers: {
-        Authorization: `Basic ${token}`,
+        Authorization: "Basic " + token,
         "Content-Type": "application/x-www-form-urlencoded",
       },
       data: "grant_type=client_credentials",
     });
-    //return access token
     return response.data.access_token;
-    //console.log(response.data.access_token);
   } catch (error) {
-    //on fail, log the error in console
     console.log(error);
   }
 };
 
 const access_token = await getAuth();
+console.log(access_token);
 
 const axiosInstance = axios.create({
   baseURL: " https://api.spotify.com/v1",
   headers: {
-    Authorization: `Bearer ${access_token}`,
+    Authorization: "Bearer " + access_token,
   },
   data: "grant_type=client_credentials",
 });
