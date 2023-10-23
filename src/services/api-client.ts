@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import qs from "qs";
 
 interface FetchResponse<T> {
   count: number;
@@ -11,19 +12,18 @@ interface Token {
 const clientID = "4c6ae60992184ac7bc189106d32e1074";
 const clientSecret = "abe96e51897b427099725255caff0598";
 const token = btoa(clientID + ":" + clientSecret);
+const data = qs.stringify({ grant_type: "client_credentials" });
 
 const getToken = () => {
   const tokenURL = "https://accounts.spotify.com/api/token";
   axios
-    .post<Token>(tokenURL, {
+    .post<Token>(tokenURL, data, {
       headers: {
         Authorization: "Basic " + token,
         "Content-Type": "application/x-www-form-urlencoded",
       },
-
-      data: "grant_type=client_credentials",
     })
-    .then((res) => res.data.access_token);
+    .then((res) => console.log(res.data.access_token));
 };
 
 const access_token = getToken();
