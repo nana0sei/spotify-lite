@@ -23,7 +23,7 @@ const getToken = () => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
     })
-    .then((res) => console.log(res.data.access_token));
+    .then((res) => res.data.access_token);
 };
 
 const access_token = getToken();
