@@ -22,7 +22,6 @@ const getAccessToken = () => {
     })
     .then((res) => res.data.access_token)
     .catch((error) => {
-      // Handle any errors here
       console.error("Error getting access token:", error);
       throw error;
     });
