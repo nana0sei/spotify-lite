@@ -7,7 +7,7 @@ interface FetchResponse<T> {
   results: T[];
 }
 
-const access_token = getAccessToken();
+const access_token = await getAccessToken();
 
 const axiosInstance = axios.create({
   baseURL: " https://api.spotify.com/v1",
