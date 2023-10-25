@@ -1,12 +1,14 @@
 import ImageObject from "./ImageObject";
+import SimplifiedArtistObject from "./SimplifiedArtistObject";
 
 interface Album {
   id: string;
   name: string;
+  album_type: string;
   total_tracks: number;
   release_date: string;
-  release_date_precision: "year";
   images: ImageObject[];
+  artists: SimplifiedArtistObject[];
 }
 
 export default Album;

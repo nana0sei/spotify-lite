@@ -20,13 +20,18 @@ const AlbumHeader = () => {
       <HStack padding={5}>
         <Image boxSize="300px" src={album.images[0].url} />
         <VStack align="flex-start">
-          <Text>Album</Text>
+          <Text>{album.album_type}</Text>
           <Heading size="4xl" paddingBottom={5}>
             {album.name}
           </Heading>
-          <Text>
-            {album.release_date} • {album.total_tracks} songs
-          </Text>
+          <HStack>
+            {album.artists.map((artists, index) => (
+              <Text key={index}>{artists.name} • </Text>
+            ))}
+            <Text>
+              {album.release_date} • {album.total_tracks} songs
+            </Text>
+          </HStack>
         </VStack>
       </HStack>
     </>
