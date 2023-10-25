@@ -18,10 +18,12 @@ const AlbumHeader = () => {
   return (
     <>
       <HStack padding={5}>
-        {/* <Image boxSize="300px" src={} /> */}
+        <Image boxSize="300px" src={album.images[0].url} />
         <VStack align="flex-start">
           <Text>Album</Text>
-          <Heading size="4xl">{album.name}</Heading>
+          <Heading size="4xl" paddingBottom={5}>
+            {album.name}
+          </Heading>
           <Text>
             {album.release_date} • {album.total_tracks} songs
           </Text>
