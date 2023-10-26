@@ -17,7 +17,7 @@ const AlbumHeader = () => {
   if (error || !album) throw error;
   return (
     <>
-      <HStack padding={5}>
+      <HStack>
         <Image boxSize="300px" src={album.images[0].url} />
         <VStack align="flex-start">
           <Text>
@@ -27,7 +27,7 @@ const AlbumHeader = () => {
               ? "Compilation"
               : "Single"}
           </Text>
-          <Heading size="3xl" paddingBottom={5}>
+          <Heading size="4xl" paddingBottom={5}>
             {album.name}
           </Heading>
           <HStack>

@@ -1,5 +1,6 @@
 import ImageObject from "./ImageObject";
 import SimplifiedArtistObject from "./SimplifiedArtistObject";
+import Tracks from "./Tracks";
 
 interface Album {
   id: string;
@@ -9,6 +10,7 @@ interface Album {
   release_date: string;
   images: ImageObject[];
   artists: SimplifiedArtistObject[];
+  tracks: Tracks;
 }
 
 export default Album;
