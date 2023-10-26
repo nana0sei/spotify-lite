@@ -1,9 +1,13 @@
+import { Card } from "@chakra-ui/react";
 import UpperNav from "./UpperNav";
 
 const Navbar = () => {
   return (
     <>
-      <UpperNav />
+      <Card pos="fixed">
+        {" "}
+        <UpperNav />
+      </Card>
     </>
   );
 };
