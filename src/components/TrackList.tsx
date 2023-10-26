@@ -16,7 +16,9 @@ const TrackList = () => {
             {tracks.track_number}
           </Text>
           <VStack align="flex-start" spacing={1}>
-            <Text key={index}>{tracks.name}</Text>
+            <Text as="b" key={index}>
+              {tracks.name}
+            </Text>
             {album.artists.map((artists, index) => (
               <Text key={index}>{artists.name} </Text>
             ))}
