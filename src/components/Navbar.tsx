@@ -5,7 +5,6 @@ const Navbar = () => {
   return (
     <>
       <Card pos="fixed">
-        {" "}
         <UpperNav />
       </Card>
     </>
