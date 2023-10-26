@@ -1,8 +1,9 @@
 import SimplifiedArtistObject from "./SimplifiedArtistObject";
 
-interface SimplifiedTrackObject {
+export interface SimplifiedTrackObject {
   artists: SimplifiedArtistObject[];
   name: string;
+  track_number: number;
 }
 interface Tracks {
   items: SimplifiedTrackObject[];
