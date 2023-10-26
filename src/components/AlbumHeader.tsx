@@ -1,20 +1,32 @@
 import { useParams } from "react-router-dom";
 import useAlbum from "../hooks/UseAlbum";
-import { HStack, Heading, Image, Text, VStack } from "@chakra-ui/react";
-import AlbumHeaderSkeleton from "./AlbumHeaderSkeleton";
+import {
+  HStack,
+  Heading,
+  Image,
+  Skeleton,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 
 const AlbumHeader = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
 
-  if (isLoading) return <AlbumHeaderSkeleton />;
+  if (isLoading) return <Skeleton boxSize="300px" />;
   if (error || !album) throw error;
   return (
     <>
       <HStack padding={5}>
         <Image boxSize="300px" src={album.images[0].url} />
         <VStack align="flex-start">
-          <Text>{album.album_type}</Text>
+          <Text>
+            {album.album_type === "album"
+              ? "Album"
+              : album.album_type === "compilation"
+              ? "Compilation"
+              : "Single"}
+          </Text>
           <Heading size="3xl" paddingBottom={5}>
             {album.name}
           </Heading>
