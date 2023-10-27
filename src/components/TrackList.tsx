@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useAlbum from "../hooks/UseAlbum";
 import { HStack, Spinner, Text, VStack } from "@chakra-ui/react";
+import ExplicitTag from "./ExplicitTag";
 
 const TrackList = () => {
   const { id } = useParams();
@@ -15,13 +16,16 @@ const TrackList = () => {
           <Text key={index} size="2xl">
             {tracks.track_number}
           </Text>
-          <VStack align="flex-start" spacing={1}>
+          <VStack align="flex-start" spacing={1} paddingY={2}>
             <Text as="b" key={index}>
               {tracks.name}
             </Text>
-            {album.artists.map((artists, index) => (
-              <Text key={index}>{artists.name} </Text>
-            ))}
+            <HStack>
+              {tracks.explicit && <ExplicitTag key={index} />}
+              {album.artists.map((artists, index) => (
+                <Text key={index}>{artists.name} </Text>
+              ))}
+            </HStack>
           </VStack>
         </HStack>
       ))}
