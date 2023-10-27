@@ -12,7 +12,7 @@ const TrackList = () => {
   return (
     <>
       {album.tracks.items.map((tracks, index) => (
-        <HStack spacing={5} key={index} paddingLeft={5}>
+        <HStack spacing={5} key={index} paddingX={10}>
           <Text key={index} size="2xl">
             {tracks.track_number}
           </Text>

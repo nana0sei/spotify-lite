@@ -5,7 +5,7 @@ import TrackList from "../components/TrackList";
 const AlbumDetailPage = () => {
   return (
     <>
-      <Card margin={2}>
+      <Card>
         <AlbumHeader />
         <TrackList />
       </Card>

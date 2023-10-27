@@ -21,12 +21,12 @@ const Layout = () => {
         }}
       >
         <Show above="lg">
-          <GridItem area="nav" padding={2}>
+          <GridItem area="nav" padding={2} pos="fixed">
             <Navbar />
           </GridItem>
         </Show>
 
-        <GridItem area="main">
+        <GridItem area="main" padding={2}>
           <Outlet />
         </GridItem>
 

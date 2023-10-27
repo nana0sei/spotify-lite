@@ -4,7 +4,7 @@ import UpperNav from "./UpperNav";
 const Navbar = () => {
   return (
     <>
-      <VStack pos="fixed">
+      <VStack>
         <UpperNav />
       </VStack>
     </>

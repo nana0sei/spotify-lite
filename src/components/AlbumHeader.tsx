@@ -17,7 +17,7 @@ const AlbumHeader = () => {
   if (error || !album) throw error;
   return (
     <>
-      <HStack padding={5}>
+      <HStack paddingY={5} paddingX={10}>
         <Image boxSize="300px" src={album.images[0].url} />
         <VStack align="flex-start">
           <Text>
