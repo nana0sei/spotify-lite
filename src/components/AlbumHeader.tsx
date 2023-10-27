@@ -4,6 +4,7 @@ import {
   HStack,
   Heading,
   Image,
+  Show,
   Skeleton,
   Text,
   VStack,
@@ -19,26 +20,29 @@ const AlbumHeader = () => {
     <>
       <HStack paddingY={5} paddingX={10}>
         <Image boxSize="300px" src={album.images[0].url} />
-        <VStack align="flex-start">
-          <Text>
-            {album.album_type === "album"
-              ? "Album"
-              : album.album_type === "compilation"
-              ? "Compilation"
-              : "Single"}
-          </Text>
-          <Heading size="4xl" paddingBottom={5}>
-            {album.name}
-          </Heading>
-          <HStack>
-            {album.artists.map((artists, index) => (
-              <Text key={index}>{artists.name} • </Text>
-            ))}
+
+        <Show above="md">
+          <VStack align="flex-start">
             <Text>
-              {album.release_date} • {album.total_tracks} songs
+              {album.album_type === "album"
+                ? "Album"
+                : album.album_type === "compilation"
+                ? "Compilation"
+                : "Single"}
             </Text>
-          </HStack>
-        </VStack>
+            <Heading size="4xl" paddingBottom={5}>
+              {album.name}
+            </Heading>
+            <HStack>
+              {album.artists.map((artists, index) => (
+                <Text key={index}>{artists.name} • </Text>
+              ))}
+              <Text>
+                {album.release_date} • {album.total_tracks} songs
+              </Text>
+            </HStack>
+          </VStack>
+        </Show>
       </HStack>
     </>
   );
