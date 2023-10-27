@@ -1,14 +1,14 @@
-import { Box } from "@chakra-ui/react";
+import { Card } from "@chakra-ui/react";
 import AlbumHeader from "../components/AlbumHeader";
 import TrackList from "../components/TrackList";
 
 const AlbumDetailPage = () => {
   return (
     <>
-      <Box padding={5}>
+      <Card padding={5}>
         <AlbumHeader />
         <TrackList />
-      </Box>
+      </Card>
     </>
   );
 };
