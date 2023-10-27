@@ -1,12 +1,12 @@
-import { Card } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import UpperNav from "./UpperNav";
 
 const Navbar = () => {
   return (
     <>
-      <Card pos="fixed">
+      <VStack pos="fixed">
         <UpperNav />
-      </Card>
+      </VStack>
     </>
   );
 };

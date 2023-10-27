@@ -5,7 +5,7 @@ import { AiFillHome } from "react-icons/ai";
 const UpperNav = () => {
   return (
     <>
-      <Card width="350px">
+      <Card width="340px">
         <CardBody>
           <HStack>
             <AiFillHome size="20px" />
