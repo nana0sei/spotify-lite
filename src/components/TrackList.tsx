@@ -30,7 +30,7 @@ const TrackList = () => {
                   </Text>
 
                   {/* artist names and explicit tags */}
-                  <HStack>
+                  <HStack spacing={1}>
                     {tracks.explicit && <ExplicitTag key={index} />}
                     {/* dynamically render artist names */}
                     <Show above="md">
