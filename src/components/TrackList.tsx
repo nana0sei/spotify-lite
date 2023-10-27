@@ -25,6 +25,8 @@ const TrackList = () => {
             {/* artist names and explicit tags */}
             <HStack>
               {tracks.explicit && <ExplicitTag key={index} />}
+
+              {/* dynamically render artist names */}
               {tracks.artists.map((artists, index) => (
                 <Text key={index}>
                   {index === tracks.artists.length - 1
