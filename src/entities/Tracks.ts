@@ -5,6 +5,7 @@ export interface SimplifiedTrackObject {
   name: string;
   track_number: number;
   explicit: boolean;
+  duration_ms: number;
 }
 interface Tracks {
   items: SimplifiedTrackObject[];

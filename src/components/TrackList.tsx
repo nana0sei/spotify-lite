@@ -4,11 +4,22 @@ import { HStack, Spinner, Text, VStack } from "@chakra-ui/react";
 import ExplicitTag from "./ExplicitTag";
 
 const TrackList = () => {
+  const formatDuration = (milliseconds: number) => {
+    // Calculate minutes and seconds
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+
+    // Format the result as "min:sec"
+    const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return formattedTime;
+  };
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
 
   if (isLoading) return <Spinner />;
   if (error || !album) throw error;
+
   return (
     <>
       {album.tracks.items.map((tracks, index) => (
@@ -36,6 +47,7 @@ const TrackList = () => {
               ))}
             </HStack>
           </VStack>
+          <Text>{formatDuration(tracks.duration_ms)}</Text>
         </HStack>
       ))}
     </>
