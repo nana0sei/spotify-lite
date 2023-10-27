@@ -26,7 +26,11 @@ const TrackList = () => {
             <HStack>
               {tracks.explicit && <ExplicitTag key={index} />}
               {tracks.artists.map((artists, index) => (
-                <Text key={index}>{artists.name}</Text>
+                <Text key={index}>
+                  {index === tracks.artists.length - 1
+                    ? artists.name
+                    : artists.name + ","}
+                </Text>
               ))}
             </HStack>
           </VStack>
