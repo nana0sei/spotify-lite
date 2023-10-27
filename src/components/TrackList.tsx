@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import useAlbum from "../hooks/UseAlbum";
-import { HStack, Spinner, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Spinner, Text, VStack } from "@chakra-ui/react";
 import ExplicitTag from "./ExplicitTag";
 
 const TrackList = () => {
@@ -23,30 +23,35 @@ const TrackList = () => {
   return (
     <>
       {album.tracks.items.map((tracks, index) => (
-        <HStack spacing={5} key={index} paddingX={10}>
-          <Text key={index} size="2xl">
-            {tracks.track_number}
-          </Text>
-
-          <VStack align="flex-start" spacing={1} paddingY={2}>
-            <Text as="b" key={index}>
-              {tracks.name}
-            </Text>
-
-            {/* artist names and explicit tags */}
-            <HStack>
-              {tracks.explicit && <ExplicitTag key={index} />}
-
-              {/* dynamically render artist names */}
-              {tracks.artists.map((artists, index) => (
-                <Text key={index}>
-                  {index === tracks.artists.length - 1
-                    ? artists.name
-                    : artists.name + ","}
+        <HStack key={index} paddingX={10} justifyContent="space-between">
+          {/* left section */}
+          <Box>
+            <HStack spacing={5}>
+              <Text key={index} size="2xl">
+                {tracks.track_number}
+              </Text>
+              <VStack align="flex-start" spacing={1} paddingY={2}>
+                <Text as="b" key={index}>
+                  {tracks.name}
                 </Text>
-              ))}
+
+                {/* artist names and explicit tags */}
+                <HStack>
+                  {tracks.explicit && <ExplicitTag key={index} />}
+                  {/* dynamically render artist names */}
+                  {tracks.artists.map((artists, index) => (
+                    <Text key={index}>
+                      {index === tracks.artists.length - 1
+                        ? artists.name
+                        : artists.name + ","}
+                    </Text>
+                  ))}
+                </HStack>
+              </VStack>
             </HStack>
-          </VStack>
+          </Box>
+
+          {/* right section */}
           <Text>{formatDuration(tracks.duration_ms)}</Text>
         </HStack>
       ))}
