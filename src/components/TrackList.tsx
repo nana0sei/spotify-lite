@@ -2,18 +2,9 @@ import { useParams } from "react-router-dom";
 import useAlbum from "../hooks/UseAlbum";
 import { Box, HStack, Show, Spinner, Text, VStack } from "@chakra-ui/react";
 import ExplicitTag from "./ExplicitTag";
+import formatDuration from "../functions/formatDuration";
 
 const TrackList = () => {
-  const formatDuration = (milliseconds: number) => {
-    // Calculate minutes and seconds
-    const totalSeconds = Math.floor(milliseconds / 1000);
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-
-    // Format the result as "min:sec"
-    const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    return formattedTime;
-  };
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
 
