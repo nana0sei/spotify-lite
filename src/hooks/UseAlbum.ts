@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import Album from "../entities/Album";
 import APIClient from "../services/api-client";
 

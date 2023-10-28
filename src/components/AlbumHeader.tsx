@@ -28,14 +28,16 @@ const AlbumHeader = () => {
                 ? "Album"
                 : album.album_type === "compilation"
                 ? "Compilation"
-                : "Single"}
+                : "EP"}
             </Text>
             <Heading size="4xl" paddingBottom={5}>
               {album.name}
             </Heading>
             <HStack>
               {album.artists.map((artists, index) => (
-                <Text key={index}>{artists.name} • </Text>
+                <Text key={index} as="b">
+                  {artists.name} •{" "}
+                </Text>
               ))}
               <Text>
                 {album.release_date} • {album.total_tracks} songs
