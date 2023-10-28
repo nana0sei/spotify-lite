@@ -14,7 +14,7 @@ const AlbumHeader = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
 
-  if (isLoading) return <Skeleton boxSize="300px" />;
+  if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;
   return (
     <>

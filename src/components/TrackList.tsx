@@ -1,15 +1,25 @@
 import { useParams } from "react-router-dom";
 import useAlbum from "../hooks/UseAlbum";
-import { Box, HStack, Show, Spinner, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Show, Text, VStack } from "@chakra-ui/react";
 import ExplicitTag from "./ExplicitTag";
 import formatDuration from "../functions/formatDuration";
 import TracklistHeader from "./TracklistHeader";
+import TracklistSkeleton from "./TracklistSkeleton";
 
 const TrackList = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
+  const skeletons = [1, 2, 3, 4, 5, 6];
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <Box paddingX={10}>
+        <TracklistHeader />
+        {skeletons.map((skeleton) => (
+          <TracklistSkeleton key={skeleton} />
+        ))}
+      </Box>
+    );
   if (error || !album) throw error;
 
   return (
