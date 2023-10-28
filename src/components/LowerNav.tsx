@@ -1,15 +1,24 @@
 import {
+  Alert,
+  AlertIcon,
   Button,
   Card,
   CardBody,
   HStack,
   Heading,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalOverlay,
   Text,
   VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { BiPlus } from "react-icons/bi";
 
 const LowerNav = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Card width="340px">
@@ -27,6 +36,7 @@ const LowerNav = () => {
                 <Text>It's easy, we'll help you</Text>
               </VStack>
               <Button
+                onClick={onOpen}
                 borderRadius="30px"
                 color="gray.800"
                 bg="gray.50"
@@ -45,6 +55,7 @@ const LowerNav = () => {
                 <Text>We'll keep you updated on new episodes</Text>
               </VStack>
               <Button
+                onClick={onOpen}
                 borderRadius="30px"
                 color="gray.800"
                 bg="gray.50"
@@ -56,6 +67,19 @@ const LowerNav = () => {
           </Card>
         </CardBody>
       </Card>
+
+      {/* modal */}
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalBody>
+            <Alert status="error" variant="solid">
+              <AlertIcon />
+              This feature requires a Spotify Account
+            </Alert>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
