@@ -6,7 +6,7 @@ const TracklistSkeleton = () => {
       <Box>
         <SkeletonText
           paddingY={3}
-          width="30%"
+          width="40%"
           noOfLines={2}
           spacing={5}
           skeletonHeight="5"
