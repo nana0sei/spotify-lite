@@ -19,7 +19,7 @@ const AlbumHeader = () => {
   return (
     <>
       <HStack paddingY={5} paddingX={10}>
-        <Image boxSize="250px" src={album.images[0].url} />
+        <Image boxSize="300px" src={album.images[0].url} />
 
         <Show above="md">
           <VStack align="flex-start">
