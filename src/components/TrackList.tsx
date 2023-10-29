@@ -31,9 +31,11 @@ const TrackList = () => {
             {/* left section */}
             <Box>
               <HStack spacing={5}>
-                <Text key={index} size="2xl">
-                  {tracks.track_number}
-                </Text>
+                <Box boxSize="20px">
+                  <Text key={index} size="2xl">
+                    {tracks.track_number}
+                  </Text>
+                </Box>
                 <VStack align="flex-start" spacing={1} paddingY={2}>
                   <Text as="b" key={index}>
                     {tracks.name}
