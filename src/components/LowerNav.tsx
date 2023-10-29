@@ -24,7 +24,7 @@ const LowerNav = () => {
           </HStack>
 
           {/* playlist card */}
-          <Card bg="gray.600" marginTop={2}>
+          <Card bg="gray.800" marginTop={2}>
             <CardBody>
               <VStack justifyContent="space-between" align="flex-start">
                 <Heading size="sm">Create your first playlist</Heading>
@@ -43,7 +43,7 @@ const LowerNav = () => {
           </Card>
 
           {/* podcast card */}
-          <Card bg="gray.600" marginTop={2}>
+          <Card bg="gray.800" marginTop={2}>
             <CardBody>
               <VStack justifyContent="space-between" align="flex-start">
                 <Heading size="sm">Let's find some podcasts to follow</Heading>
