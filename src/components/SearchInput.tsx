@@ -1,9 +1,23 @@
 import { BsSearch } from "react-icons/bs";
-import { Box, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {
+  Box,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Spinner,
+} from "@chakra-ui/react";
 import { useRef } from "react";
+import useSearch from "../hooks/useSearch";
+import { useParams } from "react-router-dom";
 
 const SearchInput = () => {
+  const { id } = useParams();
+
+  const { data: search, isLoading, error } = useSearch(id!);
   const ref = useRef<HTMLInputElement>(null);
+
+  if (isLoading) return <Spinner />;
+  if (error) throw error;
   return (
     <Box paddingY={2} paddingX={10}>
       <form
