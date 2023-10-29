@@ -19,7 +19,7 @@ const CustomAlert = ({ isOpen, onClose, children }: Props) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalBody>
+          <ModalBody bg="red.500">
             <Alert status="error" variant="solid">
               <AlertIcon />
               {children}
