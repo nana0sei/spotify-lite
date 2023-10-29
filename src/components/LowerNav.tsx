@@ -1,20 +1,15 @@
 import {
-  Alert,
-  AlertIcon,
   Button,
   Card,
   CardBody,
   HStack,
   Heading,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalOverlay,
   Text,
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
 import { BiPlus } from "react-icons/bi";
+import CustomAlert from "./CustomAlert";
 
 const LowerNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -68,18 +63,11 @@ const LowerNav = () => {
         </CardBody>
       </Card>
 
-      {/* modal */}
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalBody>
-            <Alert status="error" variant="solid">
-              <AlertIcon />
-              This feature requires a Spotify Account
-            </Alert>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <CustomAlert
+        isOpen={isOpen}
+        onClose={onClose}
+        children={"This feature is not available in this lite version"}
+      />
     </>
   );
 };
