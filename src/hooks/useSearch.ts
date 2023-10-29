@@ -4,10 +4,10 @@ import SearchResponse from "../entities/SearchResponse";
 
 const apiClient = new APIClient<SearchResponse>("/search");
 
-const useSearch = (name: string) =>
+const useSearch = (q: string) =>
   useQuery({
-    queryKey: ["search", name],
-    queryFn: () => apiClient.search(name),
+    queryKey: ["search", q],
+    queryFn: () => apiClient.search(q),
   });
 
 export default useSearch;

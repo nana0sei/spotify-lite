@@ -11,9 +11,9 @@ import useSearch from "../hooks/useSearch";
 import { useParams } from "react-router-dom";
 
 const SearchInput = () => {
-  const { id } = useParams();
+  const { q } = useParams();
 
-  const { data: search, isLoading, error } = useSearch(id!);
+  const { data: search, isLoading, error } = useSearch(q!);
   const ref = useRef<HTMLInputElement>(null);
 
   if (isLoading) return <Spinner />;
