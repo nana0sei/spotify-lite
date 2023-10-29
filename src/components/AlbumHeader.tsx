@@ -16,6 +16,7 @@ const AlbumHeader = () => {
 
   if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;
+
   return (
     <>
       <HStack paddingY={5} paddingX={10}>
@@ -38,7 +39,7 @@ const AlbumHeader = () => {
                 </Text>
               ))}
               <Text>
-                {album.release_date} • {album.total_tracks} songs
+                {album.release_date.slice(0, 4)} • {album.total_tracks} songs
               </Text>
             </HStack>
           </VStack>
