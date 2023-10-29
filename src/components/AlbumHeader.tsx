@@ -30,9 +30,7 @@ const AlbumHeader = () => {
                 ? "Compilation"
                 : "EP"}
             </Text>
-            <Heading size="4xl" paddingBottom={5}>
-              {album.name}
-            </Heading>
+            <Heading size="3xl">{album.name}</Heading>
             <HStack>
               {album.artists.map((artists, index) => (
                 <Text key={index} as="b">
