@@ -1,21 +1,26 @@
 import { Card, CardBody, HStack, Heading } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
-import { AiFillHome } from "react-icons/ai";
+import { MdHomeFilled } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const UpperNav = () => {
   return (
     <>
-      <Card maxW="sm">
+      <Card width="340px">
         <CardBody>
-          <HStack>
-            <AiFillHome size="20px" />
-            <Heading fontSize="lg">Home</Heading>
-          </HStack>
+          <Link to="/">
+            <HStack>
+              <MdHomeFilled size="25px" />
+              <Heading fontSize="lg">Home</Heading>
+            </HStack>
+          </Link>
 
-          <HStack paddingTop={5}>
-            <BiSearch size="20px" />
-            <Heading fontSize="lg">Search</Heading>
-          </HStack>
+          <Link to="/search">
+            <HStack paddingTop={5}>
+              <BiSearch size="25px" />
+              <Heading fontSize="lg">Search</Heading>
+            </HStack>
+          </Link>
         </CardBody>
       </Card>
     </>

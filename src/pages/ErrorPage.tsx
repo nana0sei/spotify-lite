@@ -1,8 +1,8 @@
-import { Grid, Show, GridItem, Card } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
-import { Outlet } from "react-router-dom";
+import { Grid, Show, GridItem } from "@chakra-ui/react";
+import ErrorMessage from "../components/ErrorMessage";
 
-const Layout = () => {
+const ErrorPage = () => {
   return (
     <>
       <Grid
@@ -21,15 +21,13 @@ const Layout = () => {
         }}
       >
         <Show above="lg">
-          <GridItem area="nav" padding={2} pos="fixed">
+          <GridItem area="nav" padding={2}>
             <Navbar />
           </GridItem>
         </Show>
 
-        <GridItem area="main" padding={2}>
-          <Card>
-            <Outlet />
-          </Card>
+        <GridItem area="main">
+          <ErrorMessage />
         </GridItem>
 
         <GridItem area="controls" bg="blue.300">
@@ -46,4 +44,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default ErrorPage;

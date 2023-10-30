@@ -1,15 +1,19 @@
 import axios, { AxiosRequestConfig } from "axios";
+import getAccessToken from "./token-client";
+
+interface FetchResponse<T> {
+  count: number;
+  next: string | null;
+  results: T[];
+}
+
+const access_token = await getAccessToken();
 
 const axiosInstance = axios.create({
   baseURL: " https://api.spotify.com/v1",
-  params: {
-    clientID: "4c6ae60992184ac7bc189106d32e1074",
-    clientSecret: "abe96e51897b427099725255caff0598",
-  },
   headers: {
-    "Content-Type": "application/x-www-form-urlencoded",
+    Authorization: "Bearer " + access_token,
   },
-  data: "grant_type=client_credentials&client_id=clientID&client_secret=clientSecret",
 });
 
 class APIClient<T> {
@@ -18,13 +22,22 @@ class APIClient<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
+
   getAll = (config: AxiosRequestConfig) => {
-    return axiosInstance.get(this.endpoint, config).then((res) => res.data);
+    return axiosInstance
+      .get<FetchResponse<T>>(this.endpoint, config)
+      .then((res) => res.data);
   };
 
-  get = (id: number | string) => {
+  getAlbum = (id: string) => {
     return axiosInstance
       .get<T>(this.endpoint + "/" + id)
+      .then((res) => res.data);
+  };
+
+  search = (q: string) => {
+    return axiosInstance
+      .get<T>(this.endpoint + "?q=" + q + "&&type=album")
       .then((res) => res.data);
   };
 }

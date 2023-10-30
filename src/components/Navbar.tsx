@@ -1,9 +1,14 @@
+import { VStack } from "@chakra-ui/react";
 import UpperNav from "./UpperNav";
+import LowerNav from "./LowerNav";
 
 const Navbar = () => {
   return (
     <>
-      <UpperNav />
+      <VStack spacing={2}>
+        <UpperNav />
+        <LowerNav />
+      </VStack>
     </>
   );
 };

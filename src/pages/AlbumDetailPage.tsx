@@ -1,5 +1,13 @@
+import AlbumHeader from "../components/AlbumHeader";
+import TrackList from "../components/TrackList";
+
 const AlbumDetailPage = () => {
-  return <div>AlbumDetailPage</div>;
+  return (
+    <>
+      <AlbumHeader />
+      <TrackList />
+    </>
+  );
 };
 
 export default AlbumDetailPage;

@@ -1,5 +1,11 @@
+import SearchInput from "../components/SearchInput";
+
 const SearchPage = () => {
-  return <div>SearchPage</div>;
+  return (
+    <>
+      <SearchInput />
+    </>
+  );
 };
 
 export default SearchPage;
