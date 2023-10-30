@@ -6,11 +6,12 @@ import {
   InputLeftElement,
   Spinner,
 } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import useSearch from "../hooks/useSearch";
 import { useParams } from "react-router-dom";
 
 const SearchInput = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const { q } = useParams();
 
   const { data: search, isLoading, error } = useSearch(q!);
@@ -36,6 +37,7 @@ const SearchInput = () => {
             width="40%"
             placeholder="What do you want to listen to?"
             variant="filled"
+            onChange={(event) => setSearchQuery(event.target.value)}
           />
         </InputGroup>
       </form>
