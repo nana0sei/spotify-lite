@@ -35,6 +35,12 @@ class APIClient<T> {
       .then((res) => res.data);
   };
 
+  getPlaylist = (playlist_id: string) => {
+    return axiosInstance
+      .get<T>(this.endpoint + "/" + playlist_id)
+      .then((res) => res.data);
+  };
+
   search = (q: string) => {
     return axiosInstance
       .get<T>(this.endpoint + "?q=" + q + "&type=album&limit=10")
