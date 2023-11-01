@@ -37,7 +37,7 @@ class APIClient<T> {
 
   search = (q: string) => {
     return axiosInstance
-      .get<T>(this.endpoint + "?q=" + q + "&type=album")
+      .get<T>(this.endpoint + "?q=" + q + "&type=album&limit=10")
       .then((res) => res.data);
   };
 }
