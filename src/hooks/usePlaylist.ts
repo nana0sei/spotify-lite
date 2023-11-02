@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import Album from "../entities/Album";
 import APIClient from "../services/api-client";
+import Playlist from "../entities/Playlist";
 
-const apiClient = new APIClient<Album>("/playlists");
+const apiClient = new APIClient<Playlist>("/playlists");
 
 const usePlaylist = (playlist_id: string) =>
   useQuery({
-    queryKey: ["albums", playlist_id],
-    queryFn: () => apiClient.getPlaylist(playlist_id),
+    queryKey: ["playlists", playlist_id],
+    queryFn: () => apiClient.get(playlist_id),
   });
 
 export default usePlaylist;

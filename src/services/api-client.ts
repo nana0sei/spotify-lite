@@ -29,15 +29,9 @@ class APIClient<T> {
       .then((res) => res.data);
   };
 
-  getAlbum = (id: string) => {
+  get = (id: string) => {
     return axiosInstance
       .get<T>(this.endpoint + "/" + id)
-      .then((res) => res.data);
-  };
-
-  getPlaylist = (playlist_id: string) => {
-    return axiosInstance
-      .get<T>(this.endpoint + "/" + playlist_id)
       .then((res) => res.data);
   };
 
