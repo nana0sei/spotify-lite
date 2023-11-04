@@ -7,7 +7,7 @@ const apiClient = new APIClient<Album>("/albums");
 const useAlbum = (id: string) =>
   useQuery({
     queryKey: ["albums", id],
-    queryFn: () => apiClient.getAlbum(id),
+    queryFn: () => apiClient.get(id),
   });
 
 export default useAlbum;
