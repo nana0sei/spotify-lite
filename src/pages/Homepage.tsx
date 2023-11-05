@@ -3,7 +3,7 @@ import { Heading } from "@chakra-ui/react";
 const Homepage = () => {
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
-  let greeting = "Hello";
+  let greeting = "";
 
   if (currentHour >= 5 && currentHour < 12) {
     greeting = "Good morning";
