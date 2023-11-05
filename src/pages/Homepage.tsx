@@ -15,7 +15,9 @@ const Homepage = () => {
 
   return (
     <>
-      <Heading fontSize="3xl">{greeting}</Heading>
+      <Heading fontSize="3xl" paddingX={5}>
+        {greeting}
+      </Heading>
     </>
   );
 };
