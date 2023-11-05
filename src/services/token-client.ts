@@ -5,8 +5,8 @@ interface Token {
   access_token: string;
 }
 
-const clientID = "4c6ae60992184ac7bc189106d32e1074";
-const clientSecret = "abe96e51897b427099725255caff0598";
+const clientID = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 const token = btoa(clientID + ":" + clientSecret);
 const data = qs.stringify({ grant_type: "client_credentials" });
 
