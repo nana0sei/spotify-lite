@@ -5,8 +5,9 @@ interface Playlist {
   followers: {
     total: number;
   };
-  images: ImageObject;
+  images: ImageObject[];
   name: string;
   owner: string;
+  description: string | null;
 }
 export default Playlist;
