@@ -13,7 +13,7 @@ const SearchPage = () => {
     return results;
   };
 
-  const handleInputChange = (event: {
+  const handleChange = (event: {
     target: { value: SetStateAction<string> };
   }) => {
     setQuery(event.target.value);
@@ -23,7 +23,7 @@ const SearchPage = () => {
     <>
       <SearchInput
         onSubmit={handleSearch}
-        onChange={handleInputChange}
+        onChange={handleChange}
         query={query}
       />
     </>
