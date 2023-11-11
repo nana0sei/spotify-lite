@@ -13,6 +13,7 @@ const SearchInput = () => {
   const handleSearch = async () => {
     const results = await apiClient.search(query);
     console.log(results);
+    return results;
   };
 
   return (

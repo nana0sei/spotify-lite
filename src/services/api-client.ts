@@ -40,7 +40,7 @@ class APIClient<T> {
       .get<T>(this.endpoint, {
         params: {
           q: q,
-          type: "album",
+          type: "album, artist",
           limit: 10,
         },
       })
