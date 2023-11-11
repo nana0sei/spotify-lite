@@ -1,36 +1,29 @@
 import { BsSearch } from "react-icons/bs";
 import { Box, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { useRef, useState } from "react";
-import APIClient from "../services/api-client";
-import SearchResponse from "../entities/SearchResponse";
+import { useRef } from "react";
 
-const SearchInput = () => {
-  const apiClient = new APIClient<SearchResponse>("/search");
-  const [query, setQuery] = useState("");
+interface Props {
+  query: string;
+  onChange: (event: any) => void;
+  onSubmit: () => void;
+}
 
+const SearchInput = ({ query, onChange, onSubmit }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
-
-  const handleSearch = async () => {
-    const results = await apiClient.search(query);
-    console.log(results);
-    return results;
-  };
 
   return (
     <Box paddingY={2} paddingX={10}>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          handleSearch();
+          onSubmit();
         }}
       >
         <InputGroup>
           <InputLeftElement children={<BsSearch />} />
           <Input
             value={query}
-            onChange={() => {
-              if (ref.current) setQuery(ref.current.value);
-            }}
+            onChange={onChange}
             bg="gray.800"
             ref={ref}
             borderRadius={20}
