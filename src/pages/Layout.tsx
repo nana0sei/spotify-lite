@@ -1,6 +1,7 @@
 import { Grid, Show, GridItem, Card } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
+import "../index.css";
 
 const Layout = () => {
   return (
@@ -32,7 +33,14 @@ const Layout = () => {
           </Card>
         </GridItem>
 
-        <GridItem area="controls" bg="blue.300">
+        <GridItem
+          area="controls"
+          bg="blue.300"
+          pos="fixed"
+          w="100%"
+          bottom={0}
+          zIndex={9999}
+        >
           Controls
         </GridItem>
 
