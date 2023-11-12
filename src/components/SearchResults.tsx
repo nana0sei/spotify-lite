@@ -19,7 +19,7 @@ const SearchResults = ({ artistName, artistImage, type }: Props) => {
       <VStack spacing={2} align="flex-start" paddingY={5}>
         <Heading fontSize="2xl">Top result</Heading>
 
-        <Card bg="gray.800" borderRadius={10}>
+        <Card bg="gray.800" borderRadius={10} width="40%">
           <CardBody>
             <VStack spacing={2} align="flex-start">
               <Avatar name={artistName} src={artistImage} size="2xl" />
