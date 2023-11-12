@@ -6,11 +6,12 @@ import SearchResponse from "../entities/SearchResponse";
 const SearchPage = () => {
   const apiClient = new APIClient<SearchResponse>("/search");
   const [query, setQuery] = useState("");
+  const [results, setResults] = useState<SearchResponse>({});
 
   const handleSearch = async () => {
-    const results = await apiClient.search(query);
-    console.log(results);
-    return results;
+    const res = await apiClient.search(query);
+    console.log(res);
+    setResults(res);
   };
 
   const handleChange = (event: {

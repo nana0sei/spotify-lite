@@ -2,12 +2,12 @@ import Album from "./Album";
 import SimplifiedArtistObject from "./SimplifiedArtistObject";
 
 interface SearchResponse {
-  albums: {
-    items: Album;
+  albums?: {
+    items: Album[];
   };
 
-  artists: {
-    items: SimplifiedArtistObject;
+  artists?: {
+    items: SimplifiedArtistObject[];
   };
 }
 
