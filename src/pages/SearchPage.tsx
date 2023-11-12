@@ -3,6 +3,7 @@ import SearchInput from "../components/SearchInput";
 import APIClient from "../services/api-client";
 import SearchResponse from "../entities/SearchResponse";
 import SearchResults from "../components/SearchResults";
+import { Box } from "@chakra-ui/react";
 
 const SearchPage = () => {
   const apiClient = new APIClient<SearchResponse>("/search");
@@ -23,17 +24,20 @@ const SearchPage = () => {
 
   return (
     <>
-      <SearchInput
-        onSubmit={handleSearch}
-        onChange={handleChange}
-        query={query}
-      />
-      {results && (
-        <SearchResults
-          artistName={results.artists?.items[0].name}
-          artistImage={results.artists?.items[0].images[0].url}
+      <Box paddingY={2} paddingX={5}>
+        <SearchInput
+          onSubmit={handleSearch}
+          onChange={handleChange}
+          query={query}
         />
-      )}
+        {results && (
+          <SearchResults
+            artistName={results.artists?.items[0].name}
+            artistImage={results.artists?.items[0].images[0].url}
+            type={results.artists?.items[0].type}
+          />
+        )}
+      </Box>
     </>
   );
 };
