@@ -3,6 +3,7 @@ import {
   Badge,
   Card,
   CardBody,
+  Center,
   Heading,
   Spinner,
   VStack,
@@ -16,7 +17,12 @@ const SearchResults = () => {
 
   const topResult = data?.artists?.items[0];
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <Center>
+        <Spinner />
+      </Center>
+    );
   if (error) throw error;
   return (
     <>
