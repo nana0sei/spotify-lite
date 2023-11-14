@@ -2,8 +2,8 @@ import { SetStateAction, useState } from "react";
 import SearchInput from "../components/SearchInput";
 import APIClient from "../services/api-client";
 import SearchResponse from "../entities/SearchResponse";
-import SearchResults from "../components/SearchResults";
 import { Box } from "@chakra-ui/react";
+import { Outlet } from "react-router-dom";
 
 const SearchPage = () => {
   const apiClient = new APIClient<SearchResponse>("/search");
@@ -30,13 +30,14 @@ const SearchPage = () => {
           onChange={handleChange}
           query={query}
         />
-        {results && (
+        <Outlet />
+        {/* {results && (
           <SearchResults
             artistName={results.artists?.items[0].name}
             artistImage={results.artists?.items[0].images[0].url}
             type={results.artists?.items[0].type}
           />
-        )}
+        )} */}
       </Box>
     </>
   );

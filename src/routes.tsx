@@ -5,6 +5,7 @@ import SearchPage from "./pages/SearchPage";
 import AlbumDetailPage from "./pages/AlbumDetailPage";
 import ErrorPage from "./pages/ErrorPage";
 import SearchResults from "./components/SearchResults";
+import SearchDefault from "./components/SearchDefault";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,10 @@ const router = createBrowserRouter([
       {
         path: "search/",
         element: <SearchPage />,
-        children: [{ path: ":q", element: <SearchResults /> }],
+        children: [
+          { index: true, element: <SearchDefault /> },
+          { path: ":q", element: <SearchResults /> },
+        ],
       },
       { path: "albums/:id", element: <AlbumDetailPage /> },
     ],
