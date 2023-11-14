@@ -1,21 +1,22 @@
 import { BsSearch } from "react-icons/bs";
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   query: string;
   onChange: (event: any) => void;
-  onSubmit: () => void;
 }
 
-const SearchInput = ({ query, onChange, onSubmit }: Props) => {
+const SearchInput = ({ query, onChange }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        onSubmit();
+        navigate(`${query}`);
       }}
     >
       <InputGroup>
