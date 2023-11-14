@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const SearchPage = () => {
   const [query, setQuery] = useState("");
 
-  const handleChange = async (event: {
+  const handleChange = (event: {
     target: { value: SetStateAction<string> };
   }) => {
     setQuery(event.target.value);
