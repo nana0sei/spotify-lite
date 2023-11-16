@@ -33,6 +33,7 @@ const SearchResults = () => {
             <AlbumResult
               key={index}
               img={album.images[0].url}
+              url={`/albums/${album.id}`}
               name={album.name}
               artist={album.artists.map((artists, index) =>
                 index === album.artists.length - 1
