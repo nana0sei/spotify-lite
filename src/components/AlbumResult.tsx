@@ -8,7 +8,7 @@ interface Props {
 const AlbumResult = ({ img, name, artist }: Props) => {
   return (
     <>
-      <HStack spacing={2}>
+      <HStack spacing={2} py={1}>
         <Image src={img} boxSize="50px" />
         <Box>
           <VStack spacing={1} align="flex-start">
