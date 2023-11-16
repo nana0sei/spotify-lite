@@ -10,12 +10,14 @@ import {
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useSearch from "../hooks/useSearch";
+import AlbumResult from "./AlbumResult";
 
 const SearchResults = () => {
   const { q } = useParams();
   const { data, isLoading, error } = useSearch(q!);
 
   const topResult = data?.artists?.items[0];
+  const albums = data?.albums?.items;
 
   if (isLoading)
     return (
@@ -43,6 +45,18 @@ const SearchResults = () => {
             </VStack>
           </CardBody>
         </Card>
+        {albums?.map((album, index) => (
+          <AlbumResult
+            key={index}
+            img={album.images[0].url}
+            name={album.name}
+            artist={album.artists.map((artists, index) =>
+              index === album.artists.length - 1
+                ? artists.name
+                : artists.name + ", "
+            )}
+          />
+        ))}
       </VStack>
     </>
   );
