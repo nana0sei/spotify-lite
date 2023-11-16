@@ -27,8 +27,8 @@ const Layout = () => {
           </GridItem>
         </Show>
 
-        <GridItem area="main" padding={2}>
-          <Card>
+        <GridItem area="main" px={2} pt={2} pb={10}>
+          <Card minH="700px">
             <Outlet />
           </Card>
         </GridItem>
