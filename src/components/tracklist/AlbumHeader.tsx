@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useAlbum from "../hooks/useAlbum";
+import useAlbum from "../../hooks/useAlbum";
 import {
   HStack,
   Heading,

@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import useAlbum from "../hooks/useAlbum";
+import useAlbum from "../../hooks/useAlbum";
 import { Box, HStack, Show, Text, VStack } from "@chakra-ui/react";
-import ExplicitTag from "./ExplicitTag";
-import formatDuration from "../functions/formatDuration";
+import ExplicitTag from "../ExplicitTag";
+import formatDuration from "../../functions/formatDuration";
 import TracklistHeader from "./TracklistHeader";
 import TracklistSkeleton from "./TracklistSkeleton";
 

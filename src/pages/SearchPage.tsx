@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import SearchInput from "../components/SearchInput";
+import SearchInput from "../components/search/SearchInput";
 import { Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 
