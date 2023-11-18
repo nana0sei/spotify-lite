@@ -11,7 +11,16 @@ const AlbumResult = ({ img, name, artist, url }: Props) => {
   return (
     <>
       <Link to={url}>
-        <HStack spacing={2} py={1}>
+        <HStack
+          spacing={2}
+          py={1}
+          px={2}
+          borderRadius={5}
+          _hover={{
+            bg: "gray.500",
+          }}
+          minW="350px"
+        >
           <Image src={img} boxSize="50px" />
           <Box>
             <VStack spacing={1} align="flex-start">
