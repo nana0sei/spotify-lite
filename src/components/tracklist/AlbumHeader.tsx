@@ -14,13 +14,13 @@ const AlbumHeader = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
 
-  if (isLoading) return <Skeleton boxSize="250px" marginY={5} marginX={10} />;
+  if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;
 
   return (
     <>
       <HStack paddingY={5} paddingX={10}>
-        <Image boxSize="250px" src={album.images[0].url} />
+        <Image boxSize="300px" src={album.images[0].url} />
 
         <Show above="md">
           <VStack align="flex-start">
