@@ -5,6 +5,8 @@ import {
   CardBody,
   Heading,
   VStack,
+  HStack,
+  Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
@@ -13,9 +15,10 @@ interface Props {
   name?: string;
   type?: string;
   link: string;
+  artist?: string[];
 }
 
-const TopAlbum = ({ img, name, type, link }: Props) => {
+const TopAlbum = ({ img, name, type, link, artist }: Props) => {
   return (
     <>
       <Link to={link}>
@@ -30,7 +33,10 @@ const TopAlbum = ({ img, name, type, link }: Props) => {
               <VStack spacing={2} align="flex-start">
                 <Image src={img} boxSize="100px" />
                 <Heading fontSize="3xl">{name}</Heading>
-                <Badge borderRadius={5}>{type}</Badge>
+                <HStack spacing={5}>
+                  <Text>{artist}</Text>
+                  <Badge borderRadius={5}>{type}</Badge>
+                </HStack>
               </VStack>
             </CardBody>
           </Card>

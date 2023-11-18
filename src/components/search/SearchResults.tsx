@@ -28,13 +28,21 @@ const SearchResults = () => {
           name={topResult?.name}
           type={topResult?.type}
         />
+
+        {/* top albums */}
         <VStack spacing={1} align="flex-start" pt={2}>
           <Heading fontSize="2xl">Top Albums</Heading>
+
           <TopAlbum
             img={topAlbum?.images[0].url}
             name={topAlbum?.name}
             type={topAlbum?.album_type}
             link={`/albums/${topAlbum?.id}`}
+            artist={topAlbum?.artists.map((artist, index) =>
+              index === topAlbum.artists.length - 1
+                ? artist.name
+                : artist.name + ", "
+            )}
           />
 
           {albums?.map((album, index) => (
