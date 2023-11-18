@@ -20,7 +20,7 @@ const SearchResults = () => {
   if (error) throw error;
   return (
     <>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={5}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={5} pt={5}>
         <TopResult
           img={topResult?.images[0].url}
           name={topResult?.name}
