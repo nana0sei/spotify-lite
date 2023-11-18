@@ -17,6 +17,8 @@ const AlbumHeader = () => {
   if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;
 
+  const releaseDate = album.release_date.slice(0, 4);
+
   const setProjectType = (p: string) => {
     let projectType = "";
     p === "album"
@@ -46,7 +48,8 @@ const AlbumHeader = () => {
                 </Text>
               ))}
               <Text>
-                {album.release_date.slice(0, 4)} • {album.total_tracks} songs
+                {releaseDate} • {album.total_tracks}{" "}
+                {album.total_tracks === 1 ? "song" : "songs"}
               </Text>
             </HStack>
           </VStack>
