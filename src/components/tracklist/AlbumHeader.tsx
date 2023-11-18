@@ -17,6 +17,19 @@ const AlbumHeader = () => {
   if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;
 
+  const setProjectType = (p: string) => {
+    let projectType = "";
+    p === "album"
+      ? (projectType = "Album")
+      : p === "compilation"
+      ? (projectType = "Compilation")
+      : p === "single" && album.total_tracks === 1
+      ? (projectType = "Single")
+      : (projectType = "EP");
+
+    return projectType;
+  };
+
   return (
     <>
       <HStack paddingY={5} paddingX={10}>
@@ -24,13 +37,7 @@ const AlbumHeader = () => {
 
         <Show above="md">
           <VStack align="flex-start">
-            <Text>
-              {album.album_type === "album"
-                ? "Album"
-                : album.album_type === "compilation"
-                ? "Compilation"
-                : "EP"}
-            </Text>
+            <Text>{setProjectType(album.album_type)}</Text>
             <Heading size="3xl">{album.name}</Heading>
             <HStack>
               {album.artists.map((artists, index) => (
