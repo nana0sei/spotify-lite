@@ -3,13 +3,15 @@ import { useParams } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 import AlbumResult from "./AlbumResult";
 import TopResult from "./TopResult";
+import TopAlbum from "./TopAlbum";
 
 const SearchResults = () => {
   const { q } = useParams();
   const { data, isLoading, error } = useSearch(q!);
 
   const topResult = data?.artists?.items[0];
-  const albums = data?.albums?.items;
+  const topAlbum = data?.albums?.items[0];
+  const albums = data?.albums?.items.slice(1, 9);
 
   if (isLoading)
     return (
@@ -27,7 +29,13 @@ const SearchResults = () => {
           type={topResult?.type}
         />
         <VStack spacing={1} align="flex-start" pt={2}>
-          <Heading fontSize="2xl">Albums</Heading>
+          <Heading fontSize="2xl">Top Albums</Heading>
+          <TopAlbum
+            img={topAlbum?.images[0].url}
+            name={topAlbum?.name}
+            type={topAlbum?.album_type}
+            link={`/albums/${topAlbum?.id}`}
+          />
 
           {albums?.map((album, index) => (
             <AlbumResult
