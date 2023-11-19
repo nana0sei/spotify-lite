@@ -1,17 +1,37 @@
 import { create } from "zustand";
 
-interface AlbumQuery{
-    genreId?: string
+interface AlbumQueryStore {
+  formatDuration: (ms: number) => string;
+  formatAlbumLength: (ms: number) => string;
 }
 
-interface AlbumQueryStore{
-    albumQuery: AlbumQuery;
-    setGenre: (genreId: string) => void;
-}
+const useAlbumQueryStore = create<AlbumQueryStore>(() => ({
+  formatDuration: (ms) => {
+    // Calculate minutes and seconds
+    const totalSeconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
 
-const useAlbumQueryStore = create<AlbumQueryStore>((set) =>({
-    albumQuery:{},
-    setGenre:(genreId) => set((store) => ({albumQuery: {...store.albumQuery, genreId}}))
+    // Format the result as "min:sec"
+    const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return formattedTime;
+  },
+
+  formatAlbumLength: (ms) => {
+    // Calculate hours, minutes, and seconds
+    const totalSeconds = Math.floor(ms / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const remainingSeconds = totalSeconds % 3600;
+    const minutes = Math.floor(remainingSeconds / 60);
+    const seconds = remainingSeconds % 60;
+
+    // Format the result as "hours:min:sec"
+    const formattedTime = `${
+      hours === 0 ? "" : `${hours} hr `
+    } ${minutes} min ${seconds} sec`;
+
+    return formattedTime;
+  },
 }));
 
 export default useAlbumQueryStore;

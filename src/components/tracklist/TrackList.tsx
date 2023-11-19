@@ -2,13 +2,14 @@ import { useParams } from "react-router-dom";
 import useAlbum from "../../hooks/useAlbum";
 import { Box, HStack, Show, Text, VStack } from "@chakra-ui/react";
 import ExplicitTag from "../ExplicitTag";
-import formatDuration from "../../functions/formatDuration";
 import TracklistHeader from "./TracklistHeader";
 import TracklistSkeleton from "./TracklistSkeleton";
+import useAlbumQueryStore from "../../queries/store";
 
 const TrackList = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
+  const { formatDuration } = useAlbumQueryStore();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   if (isLoading)
