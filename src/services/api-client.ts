@@ -1,11 +1,5 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import getAccessToken from "./token-client";
-
-interface FetchResponse<T> {
-  count: number;
-  next: string | null;
-  results: T[];
-}
 
 const access_token = await getAccessToken();
 
@@ -22,12 +16,6 @@ class APIClient<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-
-  getAll = (config: AxiosRequestConfig) => {
-    return axiosInstance
-      .get<FetchResponse<T>>(this.endpoint, config)
-      .then((res) => res.data);
-  };
 
   get = (id: string) => {
     return axiosInstance
