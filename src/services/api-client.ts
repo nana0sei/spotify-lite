@@ -34,6 +34,17 @@ class APIClient<T> {
       })
       .then((res) => res.data);
   };
+
+  getFeaturedPlaylists = () => {
+    return axiosInstance
+      .get<T>(this.endpoint, {
+        params: {
+          country: "GH",
+          limit: 10,
+        },
+      })
+      .then((res) => res.data);
+  };
 }
 
 export default APIClient;
