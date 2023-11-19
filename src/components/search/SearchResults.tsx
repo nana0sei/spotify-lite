@@ -7,11 +7,11 @@ import TopAlbum from "./TopAlbum";
 
 const SearchResults = () => {
   const { q } = useParams();
-  const { data, isLoading, error } = useSearch(q!);
+  const { data: results, isLoading, error } = useSearch(q!);
 
-  const topResult = data?.artists?.items[0];
-  const topAlbum = data?.albums?.items[0];
-  const albums = data?.albums?.items.slice(1, 9);
+  const topResult = results?.artists.items[0];
+  const topAlbum = results?.albums.items[0];
+  const albums = results?.albums.items.slice(1, 9);
 
   if (isLoading)
     return (
@@ -19,7 +19,7 @@ const SearchResults = () => {
         <Spinner />
       </Center>
     );
-  if (error) throw error;
+  if (error || !results) throw error;
   return (
     <>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} spacing={5} pt={5}>
