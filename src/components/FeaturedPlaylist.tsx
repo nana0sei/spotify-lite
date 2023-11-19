@@ -1,5 +1,6 @@
 import useFeaturedPlaylists from "../hooks/useFeaturedPlaylists";
 import { Card, Image, Text, VStack, SimpleGrid } from "@chakra-ui/react";
+import Summary from "./Summary";
 
 const FeaturedPlaylist = () => {
   const { data: featured, isLoading, error } = useFeaturedPlaylists();
@@ -14,6 +15,7 @@ const FeaturedPlaylist = () => {
             <VStack p={3} align="flex-start">
               <Image src={playlist.images[0].url} key={index} />
               <Text as="b">{playlist.name}</Text>
+              <Summary children={playlist.description} />
             </VStack>
           </Card>
         ))}
