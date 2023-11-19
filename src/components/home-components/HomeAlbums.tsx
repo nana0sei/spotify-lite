@@ -1,5 +1,5 @@
 import { HStack, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import homeAlbumData from "../data/homeAlbumData";
+import homeAlbumData from "../../data/homeAlbumData";
 import { Link } from "react-router-dom";
 
 const HomeAlbums = () => {

@@ -1,6 +1,6 @@
-import useFeaturedPlaylists from "../hooks/useFeaturedPlaylists";
+import useFeaturedPlaylists from "../../hooks/useFeaturedPlaylists";
 import { Card, Image, Text, VStack, SimpleGrid } from "@chakra-ui/react";
-import Summary from "./Summary";
+import Summary from "../Summary";
 
 const FeaturedPlaylist = () => {
   const { data: featured, isLoading, error } = useFeaturedPlaylists();
