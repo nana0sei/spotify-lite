@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import HomeAlbums from "../components/home-components/HomeAlbums";
-import FeaturedPlaylist from "../components/home-components/FeaturedPlaylist";
+import NewReleases from "../components/home-components/NewReleases";
 
 const Homepage = () => {
   const currentTime = new Date();
@@ -22,8 +22,8 @@ const Homepage = () => {
         <HomeAlbums />
 
         <Box pt={5}>
-          <Heading fontSize="2xl">Featured playlists</Heading>
-          <FeaturedPlaylist />
+          <Heading fontSize="2xl">New releases</Heading>
+          <NewReleases />
         </Box>
       </Box>
     </>

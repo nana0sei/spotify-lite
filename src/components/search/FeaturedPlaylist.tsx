@@ -15,7 +15,12 @@ const FeaturedPlaylist = () => {
             <VStack p={3} align="flex-start">
               <Image src={playlist.images[0].url} key={index} />
               <Text as="b">{playlist.name}</Text>
-              <Summary children={playlist.description} />
+              <Summary
+                children={playlist.description}
+                limit={40}
+                color="gray.600"
+                fontSize="sm"
+              />
             </VStack>
           </Card>
         ))}
