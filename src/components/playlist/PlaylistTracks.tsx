@@ -25,31 +25,31 @@ const PlaylistTracks = () => {
     <>
       <Box paddingX={10}>
         <PlaylistTracksHeader />
-        {playlist.tracks.items.map((tracks, index) => (
+        {playlist.tracks.items.map((t, index) => (
           <HStack key={index} justifyContent="space-between">
             {/* left section */}
             <Box>
               <HStack spacing={5}>
                 <Box boxSize="20px">
                   <Text key={index} size="2xl">
-                    {tracks.track.items.map((track) => track.track_number)}
+                    {t.track.items.map((track) => track.track_number)}
                   </Text>
                 </Box>
                 <VStack align="flex-start" spacing={1} paddingY={2}>
                   <Text as="b" key={index}>
-                    {tracks.track.items.map((track) => track.name)}
+                    {t.track.items.map((track) => track.name)}
                   </Text>
 
                   {/* artist names and explicit tags */}
                   <HStack spacing={1}>
-                    {tracks.track.items.map((t) => t.explicit) && (
+                    {t.track.items.map((track) => track.explicit) && (
                       <ExplicitTag key={index} />
                     )}
                     {/* dynamically render artist names */}
                     <Show above="md">
-                      {tracks.track.items.map((artists, index) => (
+                      {t.track.items.map((artists, index) => (
                         <Text key={index}>
-                          {index === tracks.track.items.length - 1
+                          {index === t.track.items.length - 1
                             ? artists.name
                             : artists.name + ","}
                         </Text>
