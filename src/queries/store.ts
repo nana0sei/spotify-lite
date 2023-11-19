@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 interface AlbumQueryStore {
-  formatDuration: (ms: number) => string;
+  formatDuration: (ms: number | number) => string;
   formatAlbumLength: (ms: number) => string;
 }
 
