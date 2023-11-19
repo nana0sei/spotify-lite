@@ -35,9 +35,9 @@ class APIClient<T> {
       .then((res) => res.data);
   };
 
-  getFeaturedPlaylists = () => {
+  getAll = () => {
     return axiosInstance
-      .get<T>(this.endpoint, {
+      .get<T>("browse" + this.endpoint, {
         params: {
           country: "GH",
           limit: 10,
