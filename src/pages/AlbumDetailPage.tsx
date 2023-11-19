@@ -1,5 +1,5 @@
-import AlbumHeader from "../components/tracklist/AlbumHeader";
-import TrackList from "../components/tracklist/TrackList";
+import AlbumHeader from "../components/album/AlbumHeader";
+import TrackList from "../components/album/TrackList";
 
 const AlbumDetailPage = () => {
   return (
