@@ -9,6 +9,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import Album from "../../entities/Album";
+import { formatDurationH } from "../../functions/formatDuration";
 
 const AlbumHeader = () => {
   const { id } = useParams();
@@ -32,6 +34,14 @@ const AlbumHeader = () => {
     return projectType;
   };
 
+  const getDuration = (album: Album) => {
+    let totalDuration = 0;
+    album.tracks.items.forEach((track) => (totalDuration += track.duration_ms));
+    return totalDuration;
+  };
+
+  const albumLength = getDuration(album);
+
   return (
     <>
       <HStack paddingY={5} paddingX={10}>
@@ -49,7 +59,8 @@ const AlbumHeader = () => {
               ))}
               <Text>
                 {releaseDate} • {album.total_tracks}{" "}
-                {album.total_tracks === 1 ? "song" : "songs"}
+                {album.total_tracks === 1 ? "song" : "songs"},{" "}
+                {formatDurationH(albumLength)}
               </Text>
             </HStack>
           </VStack>

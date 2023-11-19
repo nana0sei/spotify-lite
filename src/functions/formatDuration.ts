@@ -18,9 +18,9 @@ export const formatDurationH = (milliseconds: number) => {
   const seconds = remainingSeconds % 60;
 
   // Format the result as "hours:min:sec"
-  const formattedTime = `${hours}:${minutes < 10 ? "0" : ""}${minutes}:${
-    seconds < 10 ? "0" : ""
-  }${seconds}`;
+  const formattedTime = `${
+    hours === 0 ? "" : `${hours} hr `
+  } ${minutes} min ${seconds} sec`;
 
   return formattedTime;
 };
