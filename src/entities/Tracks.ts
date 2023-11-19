@@ -8,6 +8,7 @@ export interface SimplifiedTrackObject {
   duration_ms: number;
 }
 interface Tracks {
+  total: number;
   items: SimplifiedTrackObject[];
 }
 

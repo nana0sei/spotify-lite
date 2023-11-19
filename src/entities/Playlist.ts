@@ -1,4 +1,9 @@
 import ImageObject from "./ImageObject";
+import Tracks from "./Tracks";
+
+interface PlaylistTrackObject {
+  track: Tracks;
+}
 
 interface Playlist {
   id: string;
@@ -7,7 +12,13 @@ interface Playlist {
   };
   images: ImageObject[];
   name: string;
-  owner: string;
+  owner: {
+    display_name: string;
+  };
   description: string | null;
+  tracks: {
+    items: PlaylistTrackObject[];
+    total: number;
+  };
 }
 export default Playlist;

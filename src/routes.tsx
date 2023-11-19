@@ -6,6 +6,7 @@ import AlbumDetailPage from "./pages/AlbumDetailPage";
 import ErrorPage from "./pages/ErrorPage";
 import SearchResults from "./components/search/SearchResults";
 import SearchDefault from "./components/search/SearchDefault";
+import PlaylistDetailPage from "./pages/PlaylistDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
         ],
       },
       { path: "albums/:id", element: <AlbumDetailPage /> },
+      { path: "playlists/:id", element: <PlaylistDetailPage /> },
     ],
   },
 ]);
