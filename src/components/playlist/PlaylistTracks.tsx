@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Box, HStack, Show, Text, VStack } from "@chakra-ui/react";
 import ExplicitTag from "../ExplicitTag";
 import usePlaylist from "../../hooks/usePlaylist";
 import PlaylistTracksHeader from "./PlaylistTracksHeader";
 import TracklistSkeleton from "../album/TracklistSkeleton";
+import Summary from "../Summary";
 
 const PlaylistTracks = () => {
   const { id } = useParams();
@@ -32,26 +33,24 @@ const PlaylistTracks = () => {
               <HStack spacing={5}>
                 <Box boxSize="20px">
                   <Text key={index} size="2xl">
-                    {t.track.items.map((track) => track.track_number)}
+                    {index + 1}
                   </Text>
                 </Box>
                 <VStack align="flex-start" spacing={1} paddingY={2}>
-                  <Text as="b" key={index}>
-                    {t.track.items.map((track) => track.name)}
+                  <Text as="b">
+                    <Summary children={t.track.name} limit={25} />
                   </Text>
 
                   {/* artist names and explicit tags */}
                   <HStack spacing={1}>
-                    {t.track.items.map((track) => track.explicit) && (
-                      <ExplicitTag key={index} />
-                    )}
+                    {t.track.explicit && <ExplicitTag key={index} />}
                     {/* dynamically render artist names */}
                     <Show above="md">
-                      {t.track.items.map((artists, index) => (
+                      {t.track.artists.map((artist, index) => (
                         <Text key={index}>
-                          {index === t.track.items.length - 1
-                            ? artists.name
-                            : artists.name + ","}
+                          {index === t.track.artists.length - 1
+                            ? artist.name
+                            : artist.name + ","}
                         </Text>
                       ))}
                     </Show>
@@ -61,6 +60,10 @@ const PlaylistTracks = () => {
             </Box>
 
             {/* right section */}
+            <Link to={`/albums/${t.track.album.id}`} key={index}>
+              {t.track.album.name}
+            </Link>
+            <Text>{t.added_at.slice(0, 10)}</Text>
           </HStack>
         ))}
       </Box>

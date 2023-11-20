@@ -1,8 +1,9 @@
 import ImageObject from "./ImageObject";
-import Tracks from "./Tracks";
+import { SimplifiedTrackObject } from "./Tracks";
 
 interface PlaylistTrackObject {
-  track: Tracks;
+  track: SimplifiedTrackObject;
+  added_at: string;
 }
 
 interface Playlist {

@@ -1,3 +1,4 @@
+import Album from "./Album";
 import SimplifiedArtistObject from "./SimplifiedArtistObject";
 
 export interface SimplifiedTrackObject {
@@ -6,6 +7,7 @@ export interface SimplifiedTrackObject {
   track_number: number;
   explicit: boolean;
   duration_ms: number;
+  album: Album;
 }
 interface Tracks {
   total: number;
