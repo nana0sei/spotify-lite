@@ -61,7 +61,7 @@ const PlaylistTracks = () => {
 
             {/* right section */}
             <Link to={`/albums/${t.track.album.id}`} key={index}>
-              {t.track.album.name}
+              <Summary children={t.track.album.name} limit={25} />
             </Link>
             <Text>{t.added_at.slice(0, 10)}</Text>
           </HStack>

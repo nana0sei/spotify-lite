@@ -10,7 +10,8 @@ interface Props {
 const Summary = ({ children, limit, color, fontSize }: Props) => {
   if (!children) return null;
 
-  if (children.length <= limit) return <Text fontSize="sm">{children}</Text>;
+  if (children.length <= limit)
+    return <Text fontSize={fontSize}>{children}</Text>;
 
   const summary = children.substring(0, limit) + "...";
   return (
