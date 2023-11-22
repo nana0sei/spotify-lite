@@ -1,4 +1,5 @@
 import { HStack, Divider, Box, Text, Show } from "@chakra-ui/react";
+import { LuClock3 } from "react-icons/lu";
 
 const PlaylistTracksHeader = () => {
   return (
@@ -14,6 +15,7 @@ const PlaylistTracksHeader = () => {
           <Text>Album</Text>
           <Text>Date Added</Text>
         </Show>
+        <LuClock3 />
       </HStack>
       <Divider />
     </>

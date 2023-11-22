@@ -5,11 +5,13 @@ import usePlaylist from "../../hooks/usePlaylist";
 import PlaylistTracksHeader from "./PlaylistTracksHeader";
 import TracklistSkeleton from "../album/TracklistSkeleton";
 import Summary from "../Summary";
+import useAlbumQueryStore from "../../queries/store";
 
 const PlaylistTracks = () => {
   const { id } = useParams();
   const { data: playlist, isLoading, error } = usePlaylist(id!);
   const skeletons = [1, 2, 3, 4, 5, 6];
+  const { formatDuration } = useAlbumQueryStore();
 
   if (isLoading)
     return (
@@ -60,10 +62,18 @@ const PlaylistTracks = () => {
             </Box>
 
             {/* right section */}
-            <Link to={`/albums/${t.track.album.id}`} key={index}>
-              <Summary children={t.track.album.name} limit={25} />
-            </Link>
+            <Box
+              key={index}
+              _hover={{
+                textDecoration: "underline",
+              }}
+            >
+              <Link to={`/albums/${t.track.album.id}`} key={index}>
+                <Summary children={t.track.album.name} limit={25} />
+              </Link>
+            </Box>
             <Text>{t.added_at.slice(0, 10)}</Text>
+            <Text>{formatDuration(t.track.duration_ms)}</Text>
           </HStack>
         ))}
       </Box>
