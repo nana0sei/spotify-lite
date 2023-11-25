@@ -32,7 +32,7 @@ const PlaylistTracks = () => {
           <HStack key={index} justifyContent="space-between">
             {/* left section */}
             <Box>
-              <HStack spacing={5}>
+              <HStack spacing={3}>
                 <Box boxSize="20px">
                   <Text key={index} size="2xl">
                     {index + 1}
