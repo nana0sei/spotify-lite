@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import useAlbum from "../../hooks/useAlbum";
-import { Box, HStack, Show, Text, VStack } from "@chakra-ui/react";
-import ExplicitTag from "../ExplicitTag";
+import { Box } from "@chakra-ui/react";
 import TracklistHeader from "./TracklistHeader";
 import TracklistSkeleton from "./TracklistSkeleton";
 import useAlbumQueryStore from "../../queries/store";
+import TrackItem from "./TrackItem";
 
 const TrackList = () => {
   const { id } = useParams();
@@ -28,41 +28,14 @@ const TrackList = () => {
       <Box paddingX={10}>
         <TracklistHeader />
         {album.tracks.items.map((tracks, index) => (
-          <HStack key={index} justifyContent="space-between">
-            {/* left section */}
-            <Box>
-              <HStack spacing={5}>
-                <Box boxSize="20px">
-                  <Text key={index} size="2xl">
-                    {tracks.track_number}
-                  </Text>
-                </Box>
-                <VStack align="flex-start" spacing={1} paddingY={2}>
-                  <Text as="b" key={index}>
-                    {tracks.name}
-                  </Text>
-
-                  {/* artist names and explicit tags */}
-                  <HStack spacing={1}>
-                    {tracks.explicit && <ExplicitTag key={index} />}
-                    {/* dynamically render artist names */}
-                    <Show above="md">
-                      {tracks.artists.map((artists, index) => (
-                        <Text key={index}>
-                          {index === tracks.artists.length - 1
-                            ? artists.name
-                            : artists.name + ","}
-                        </Text>
-                      ))}
-                    </Show>
-                  </HStack>
-                </VStack>
-              </HStack>
-            </Box>
-
-            {/* right section */}
-            <Text>{formatDuration(tracks.duration_ms)}</Text>
-          </HStack>
+          <TrackItem
+            explicit={tracks.explicit}
+            name={tracks.name}
+            artists={tracks.artists.map((a) => a.name)}
+            key={index}
+            duration={formatDuration(tracks.duration_ms)}
+            num={tracks.track_number}
+          />
         ))}
       </Box>
     </>

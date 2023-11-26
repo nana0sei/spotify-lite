@@ -8,6 +8,7 @@ export interface SimplifiedTrackObject {
   explicit: boolean;
   duration_ms: number;
   album: Album;
+  preview_url: string;
 }
 interface Tracks {
   total: number;
