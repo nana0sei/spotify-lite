@@ -34,7 +34,7 @@ const TrackItem = ({
           bg: "gray.500",
         }}
         onClick={() => {
-          currentTrack === id ? setCurrentTrack(null) : setCurrentTrack(id);
+          setCurrentTrack(id);
           togglePlayback();
         }}
         borderRadius={5}
@@ -67,7 +67,7 @@ const TrackItem = ({
 
         <Text>{duration}</Text>
       </HStack>
-      {isPlaying && <audio src={preview} autoPlay />}
+      {currentTrack === id && isPlaying && <audio src={preview} autoPlay />}
     </>
   );
 };

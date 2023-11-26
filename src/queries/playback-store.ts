@@ -14,7 +14,7 @@ interface PlaybackQueryStore {
 const usePlaybackQueryStore = create<PlaybackQueryStore>()((set) => ({
   playbackState: {
     isPlaying: false,
-    currentTrack: null,
+    currentTrack: "",
   },
   togglePlayback: () =>
     set((state) => ({

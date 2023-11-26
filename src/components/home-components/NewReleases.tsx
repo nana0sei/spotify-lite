@@ -23,7 +23,7 @@ const NewReleases = () => {
     <>
       <SimpleGrid columns={{ sm: 2, md: 3, lg: 5 }} spacing={5} py={2}>
         {newReleases.albums.items.map((album, index) => (
-          <Link to={`/albums/${album.id}`}>
+          <Link to={`/albums/${album.id}`} key={index}>
             <Card key={index} bg="gray.800" _hover={{ bg: "gray.500" }}>
               <VStack p={3} align="flex-start">
                 <Image src={album.images[0].url} key={index} />
