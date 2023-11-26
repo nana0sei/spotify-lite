@@ -5,13 +5,13 @@ import usePlaylist from "../../hooks/usePlaylist";
 import PlaylistTracksHeader from "./PlaylistTracksHeader";
 import TracklistSkeleton from "../album/TracklistSkeleton";
 import Summary from "../Summary";
-import useAlbumQueryStore from "../../queries/store";
+import useFormatQueryStore from "../../queries/format-store";
 
 const PlaylistTracks = () => {
   const { id } = useParams();
   const { data: playlist, isLoading, error } = usePlaylist(id!);
   const skeletons = [1, 2, 3, 4, 5, 6];
-  const { formatDuration } = useAlbumQueryStore();
+  const { formatDuration } = useFormatQueryStore();
 
   if (isLoading)
     return (

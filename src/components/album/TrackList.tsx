@@ -3,13 +3,13 @@ import useAlbum from "../../hooks/useAlbum";
 import { Box } from "@chakra-ui/react";
 import TracklistHeader from "./TracklistHeader";
 import TracklistSkeleton from "./TracklistSkeleton";
-import useAlbumQueryStore from "../../queries/store";
+import useFormatQueryStore from "../../queries/format-store";
 import TrackItem from "./TrackItem";
 
 const TrackList = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
-  const { formatDuration } = useAlbumQueryStore();
+  const { formatDuration } = useFormatQueryStore();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   if (isLoading)

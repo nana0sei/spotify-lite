@@ -10,12 +10,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Album from "../../entities/Album";
-import useAlbumQueryStore from "../../queries/store";
+import useFormatQueryStore from "../../queries/format-store";
 
 const AlbumHeader = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
-  const { formatAlbumLength } = useAlbumQueryStore();
+  const { formatAlbumLength } = useFormatQueryStore();
 
   if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;

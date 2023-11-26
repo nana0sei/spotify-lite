@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface AlbumQueryStore {
+interface FormatQueryStore {
   formatDuration: (ms: number | number) => string;
   formatAlbumLength: (ms: number) => string;
 }
 
-const useAlbumQueryStore = create<AlbumQueryStore>(() => ({
+const useFormatQueryStore = create<FormatQueryStore>(() => ({
   formatDuration: (ms) => {
     // Calculate minutes and seconds
     const totalSeconds = Math.floor(ms / 1000);
@@ -34,4 +34,4 @@ const useAlbumQueryStore = create<AlbumQueryStore>(() => ({
   },
 }));
 
-export default useAlbumQueryStore;
+export default useFormatQueryStore;
