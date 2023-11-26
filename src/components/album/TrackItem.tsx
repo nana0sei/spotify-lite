@@ -1,6 +1,7 @@
 import { VStack, HStack, Text, Show, Box } from "@chakra-ui/react";
 import ExplicitTag from "../ExplicitTag";
 import usePlaybackQueryStore from "../../queries/playback-store";
+import { MdEqualizer } from "react-icons/md";
 
 interface Props {
   id: string;
@@ -45,7 +46,11 @@ const TrackItem = ({
         <Box>
           <HStack spacing={2}>
             <Box boxSize="20px">
-              <Text size="2xl">{num}</Text>
+              {currentTrack === id && isPlaying ? (
+                <MdEqualizer />
+              ) : (
+                <Text size="2xl">{num}</Text>
+              )}
             </Box>
             <VStack align="flex-start" spacing={1} paddingY={2}>
               <Text as="b">{name}</Text>

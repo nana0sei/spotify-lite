@@ -8,12 +8,19 @@ import {
   Text,
 } from "@chakra-ui/react";
 import {
+  IoPauseCircleSharp,
   IoPlayCircleSharp,
   IoPlaySkipBackSharp,
   IoPlaySkipForwardSharp,
 } from "react-icons/io5";
+import usePlaybackQueryStore from "../queries/playback-store";
 
 const PlaybackControls = () => {
+  const {
+    togglePlayback,
+    playbackState: { isPlaying },
+  } = usePlaybackQueryStore();
+
   return (
     <>
       <HStack justifyContent="space-between" h="70px" bg="gray.700" padding={5}>
@@ -21,7 +28,13 @@ const PlaybackControls = () => {
         <Box>
           <HStack spacing={5}>
             <IoPlaySkipBackSharp size="25px" />
-            <IoPlayCircleSharp size="50px" />
+            <Box onClick={togglePlayback}>
+              {isPlaying ? (
+                <IoPauseCircleSharp size="50px" />
+              ) : (
+                <IoPlayCircleSharp size="50px" />
+              )}
+            </Box>
             <IoPlaySkipForwardSharp size="25px" />
           </HStack>
         </Box>
