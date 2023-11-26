@@ -16,7 +16,7 @@ import {
 const PlaybackControls = () => {
   return (
     <>
-      <HStack justifyContent="space-between" h="70px" bg="gray.700">
+      <HStack justifyContent="space-between" h="70px" bg="gray.700" padding={5}>
         <Text>Song Details</Text>
         <Box>
           <HStack spacing={5}>
