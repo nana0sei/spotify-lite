@@ -21,7 +21,7 @@ const TopResult = ({ img, name, type }: Props) => {
         <Card bg="gray.800" borderRadius={10} minW="350px">
           <CardBody>
             <VStack spacing={2} align="flex-start">
-              <Avatar name={name} src={img} size="2xl" />
+              <Avatar name={name} src={img ? img : ""} size="xl" />
               <Heading fontSize="3xl">{name}</Heading>
 
               <Badge borderRadius={5}>{type}</Badge>
