@@ -2,6 +2,7 @@ import { Grid, Show, GridItem, Card } from "@chakra-ui/react";
 import Navbar from "../components/navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import "../index.css";
+import PlaybackControls from "../components/PlaybackControls";
 
 const Layout = () => {
   return (
@@ -27,7 +28,7 @@ const Layout = () => {
           </GridItem>
         </Show>
 
-        <GridItem area="main" px={2} pt={2} pb={10}>
+        <GridItem area="main" px={2} pt={2} pb={20}>
           <Card minH="700px">
             <Outlet />
           </Card>
@@ -35,13 +36,13 @@ const Layout = () => {
 
         <GridItem
           area="controls"
-          bg="blue.300"
           pos="fixed"
           w="100%"
           bottom={0}
           zIndex={9999}
+          pt={10}
         >
-          Controls
+          <PlaybackControls />
         </GridItem>
 
         <Show below="lg">
