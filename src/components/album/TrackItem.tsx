@@ -1,5 +1,6 @@
 import { VStack, HStack, Text, Show, Box } from "@chakra-ui/react";
 import ExplicitTag from "../ExplicitTag";
+import { useState } from "react";
 
 interface Props {
   name: string;
@@ -7,16 +8,35 @@ interface Props {
   artists: string[];
   duration: string;
   num: number;
+  preview: string;
 }
 
-const TrackItem = ({ name, explicit, artists, duration, num }: Props) => {
+const TrackItem = ({
+  name,
+  explicit,
+  artists,
+  duration,
+  num,
+  preview,
+}: Props) => {
+  const [isPlaying, setPlaying] = useState(false);
+
+  const togglePlayback = () => {
+    setPlaying((current) => !current);
+  };
   return (
     <>
-      <HStack justifyContent="space-between">
+      <HStack
+        justifyContent="space-between"
+        _hover={{
+          bg: "gray.500",
+        }}
+        onClick={togglePlayback}
+      >
         {/* left section */}
 
         <Box>
-          <HStack spacing={3}>
+          <HStack spacing={3} paddingX={1}>
             <Box boxSize="20px">
               <Text size="2xl">{num}</Text>
             </Box>
@@ -40,6 +60,7 @@ const TrackItem = ({ name, explicit, artists, duration, num }: Props) => {
 
         <Text>{duration}</Text>
       </HStack>
+      {isPlaying && <audio src={preview} autoPlay />}
     </>
   );
 };

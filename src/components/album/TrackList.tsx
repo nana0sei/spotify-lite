@@ -35,6 +35,7 @@ const TrackList = () => {
             key={index}
             duration={formatDuration(tracks.duration_ms)}
             num={tracks.track_number}
+            preview={tracks.preview_url}
           />
         ))}
       </Box>
