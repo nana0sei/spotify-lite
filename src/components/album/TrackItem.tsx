@@ -35,7 +35,7 @@ const TrackItem = ({
         }}
         onClick={() => {
           setCurrentTrack(id);
-          togglePlayback();
+          currentTrack === id && togglePlayback();
         }}
         borderRadius={5}
         paddingX={1}
