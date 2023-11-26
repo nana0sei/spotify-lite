@@ -32,11 +32,13 @@ const TrackItem = ({
           bg: "gray.500",
         }}
         onClick={togglePlayback}
+        borderRadius={5}
+        paddingX={1}
       >
         {/* left section */}
 
         <Box>
-          <HStack spacing={3} paddingX={1}>
+          <HStack spacing={2}>
             <Box boxSize="20px">
               <Text size="2xl">{num}</Text>
             </Box>
