@@ -1,13 +1,35 @@
 import { create } from "zustand";
 
-interface PlaybackQueryStore {
+interface PlaybackState {
   isPlaying: boolean;
+  currentTrack: string | null;
+}
+
+interface PlaybackQueryStore {
+  playbackState: PlaybackState;
   togglePlayback: () => void;
+  setCurrentTrack: (id: string | null) => void;
 }
 
 const usePlaybackQueryStore = create<PlaybackQueryStore>()((set) => ({
-  isPlaying: false,
-  togglePlayback: () => set((state) => ({ isPlaying: !state.isPlaying })),
+  playbackState: {
+    isPlaying: false,
+    currentTrack: null,
+  },
+  togglePlayback: () =>
+    set((state) => ({
+      playbackState: {
+        ...state.playbackState,
+        isPlaying: !state.playbackState.isPlaying,
+      },
+    })),
+  setCurrentTrack: (id) =>
+    set((state) => ({
+      playbackState: {
+        ...state.playbackState,
+        currentTrack: id,
+      },
+    })),
 }));
 
 export default usePlaybackQueryStore;

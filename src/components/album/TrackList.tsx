@@ -29,6 +29,7 @@ const TrackList = () => {
         <TracklistHeader />
         {album.tracks.items.map((tracks, index) => (
           <TrackItem
+            id={tracks.id}
             explicit={tracks.explicit}
             name={tracks.name}
             artists={tracks.artists.map((a) => a.name)}

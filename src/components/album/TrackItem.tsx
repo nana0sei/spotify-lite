@@ -1,8 +1,9 @@
 import { VStack, HStack, Text, Show, Box } from "@chakra-ui/react";
 import ExplicitTag from "../ExplicitTag";
-import { useState } from "react";
+import usePlaybackQueryStore from "../../queries/playback-store";
 
 interface Props {
+  id: string;
   name: string;
   explicit: boolean;
   artists: string[];
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const TrackItem = ({
+  id,
   name,
   explicit,
   artists,
@@ -19,11 +21,11 @@ const TrackItem = ({
   num,
   preview,
 }: Props) => {
-  const [isPlaying, setPlaying] = useState(false);
-
-  const togglePlayback = () => {
-    setPlaying((current) => !current);
-  };
+  const {
+    playbackState: { isPlaying, currentTrack },
+    togglePlayback,
+    setCurrentTrack,
+  } = usePlaybackQueryStore();
   return (
     <>
       <HStack
@@ -31,7 +33,10 @@ const TrackItem = ({
         _hover={{
           bg: "gray.500",
         }}
-        onClick={togglePlayback}
+        onClick={() => {
+          currentTrack === id ? setCurrentTrack(null) : setCurrentTrack(id);
+          togglePlayback();
+        }}
         borderRadius={5}
         paddingX={1}
       >
