@@ -2,7 +2,7 @@ import { Grid, Show, GridItem, Card } from "@chakra-ui/react";
 import Navbar from "../components/navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import "../index.css";
-import PlaybackTab from "../components/PlaybackTab";
+import PlaybackTab from "../components/playback/PlaybackTab";
 
 const Layout = () => {
   return (

@@ -7,8 +7,8 @@ import {
   Skeleton,
   SkeletonText,
 } from "@chakra-ui/react";
-import useTracks from "../hooks/useTrack";
-import usePlaybackQueryStore from "../queries/playback-store";
+import useTracks from "../../hooks/useTrack";
+import usePlaybackQueryStore from "../../queries/playback-store";
 
 const CurrentTrack = () => {
   const {
