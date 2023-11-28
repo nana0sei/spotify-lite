@@ -37,12 +37,10 @@ const CurrentTrack = () => {
         />
         <Box>
           <VStack spacing={1} align="flex-start">
-            <Text as="b" fontSize="sm">
-              {track?.name}
-            </Text>
+            <Text as="b">{track?.name}</Text>
             <HStack spacing={1}>
               {track?.artists.map((artist, index) => (
-                <Text key={index} fontSize="xs">
+                <Text key={index} fontSize="sm">
                   {index === track.artists.length - 1
                     ? artist.name
                     : artist.name + ","}
