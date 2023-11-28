@@ -25,7 +25,12 @@ const CurrentTrack = () => {
     );
 
   if (error || !currentTrack)
-    return <Text>Preview not found or unavailable</Text>;
+    return (
+      <HStack spacing={2} py={1} px={2}>
+        <HStack boxSize="50px" bg="gray.500" />
+        <Text>--- --- ---</Text>
+      </HStack>
+    );
 
   return (
     <>
