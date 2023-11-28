@@ -5,7 +5,6 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderTrack,
-  Text,
 } from "@chakra-ui/react";
 import {
   IoPauseCircleSharp,
@@ -14,6 +13,7 @@ import {
   IoPlaySkipForwardSharp,
 } from "react-icons/io5";
 import usePlaybackQueryStore from "../queries/playback-store";
+import CurrentTrack from "./CurrentTrack";
 
 const PlaybackControls = () => {
   const {
@@ -23,8 +23,8 @@ const PlaybackControls = () => {
 
   return (
     <>
-      <HStack justifyContent="space-between" h="70px" bg="gray.700" padding={5}>
-        <Text>Song Details</Text>
+      <HStack justifyContent="space-between" h="70px" bg="gray.700" padding={2}>
+        <CurrentTrack />
         <Box>
           <HStack spacing={5}>
             <IoPlaySkipBackSharp size="25px" />

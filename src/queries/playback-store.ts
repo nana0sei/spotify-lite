@@ -2,13 +2,13 @@ import { create } from "zustand";
 
 interface PlaybackState {
   isPlaying: boolean;
-  currentTrack: string | null;
+  currentTrack: string;
 }
 
 interface PlaybackQueryStore {
   playbackState: PlaybackState;
   togglePlayback: () => void;
-  setCurrentTrack: (id: string | null) => void;
+  setCurrentTrack: (id: string) => void;
 }
 
 const usePlaybackQueryStore = create<PlaybackQueryStore>()((set) => ({
