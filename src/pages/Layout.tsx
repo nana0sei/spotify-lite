@@ -2,7 +2,7 @@ import { Grid, Show, GridItem, Card } from "@chakra-ui/react";
 import Navbar from "../components/navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import "../index.css";
-import PlaybackControls from "../components/PlaybackControls";
+import PlaybackTab from "../components/PlaybackTab";
 
 const Layout = () => {
   return (
@@ -42,7 +42,7 @@ const Layout = () => {
           zIndex={9999}
           pt={10}
         >
-          <PlaybackControls />
+          <PlaybackTab />
         </GridItem>
 
         <Show below="lg">

@@ -10,18 +10,9 @@ interface Props {
   artists: string[];
   duration: string;
   num: number;
-  preview: string;
 }
 
-const TrackItem = ({
-  id,
-  name,
-  explicit,
-  artists,
-  duration,
-  num,
-  preview,
-}: Props) => {
+const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
   const {
     playbackState: { isPlaying, currentTrack },
     togglePlayback,
@@ -72,7 +63,6 @@ const TrackItem = ({
 
         <Text>{duration}</Text>
       </HStack>
-      {currentTrack === id && isPlaying && <audio src={preview} autoPlay />}
     </>
   );
 };
