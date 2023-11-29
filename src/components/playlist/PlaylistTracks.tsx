@@ -29,7 +29,7 @@ const PlaylistTracks = () => {
       <Box paddingX={10}>
         <PlaylistTracksHeader />
         {playlist.tracks.items.map((t, index) => (
-          <HStack key={index} justifyContent="space-between">
+          <HStack key={index} justifyContent="space-between" fontSize="sm">
             {/* left section */}
             <Box>
               <HStack spacing={3}>
@@ -40,7 +40,7 @@ const PlaylistTracks = () => {
                 </Box>
                 <VStack align="flex-start" spacing={1} paddingY={2}>
                   <Text as="b">
-                    <Summary children={t.track.name} limit={25} />
+                    <Summary children={t.track.name} limit={35} />
                   </Text>
 
                   {/* artist names and explicit tags */}
@@ -62,18 +62,21 @@ const PlaylistTracks = () => {
             </Box>
 
             {/* right section */}
-            <Box
-              key={index}
-              _hover={{
-                textDecoration: "underline",
-              }}
-            >
-              <Link to={`/albums/${t.track.album.id}`} key={index}>
-                <Summary children={t.track.album.name} limit={25} />
-              </Link>
-            </Box>
-            <Text>{t.added_at.slice(0, 10)}</Text>
-            <Text>{formatDuration(t.track.duration_ms)}</Text>
+            <HStack w="60%" justifyContent="space-between">
+              <Box
+                key={index}
+                w="35%"
+                _hover={{
+                  textDecoration: "underline",
+                }}
+              >
+                <Link to={`/albums/${t.track.album.id}`} key={index}>
+                  <Summary children={t.track.album.name} limit={25} />
+                </Link>
+              </Box>
+              <Text>{t.added_at.slice(0, 10)}</Text>
+              <Text>{formatDuration(t.track.duration_ms)}</Text>
+            </HStack>
           </HStack>
         ))}
       </Box>

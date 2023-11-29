@@ -11,11 +11,14 @@ const PlaylistTracksHeader = () => {
             <Text>Title</Text>
           </HStack>
         </Box>
-        <Show above="sm">
-          <Text>Album</Text>
-          <Text>Date Added</Text>
-        </Show>
-        <LuClock3 />
+
+        <HStack w="60%" justifyContent="space-between">
+          <Show above="sm">
+            <Text w="35%">Album</Text>
+            <Text>Date Added</Text>
+          </Show>
+          <LuClock3 />
+        </HStack>
       </HStack>
       <Divider />
     </>
