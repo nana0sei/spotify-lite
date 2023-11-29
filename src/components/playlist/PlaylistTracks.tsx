@@ -48,13 +48,23 @@ const PlaylistTracks = () => {
                     {t.track.explicit && <ExplicitTag key={index} />}
                     {/* dynamically render artist names */}
                     <Show above="md">
-                      {t.track.artists.map((artist, index) => (
-                        <Text key={index}>
-                          {index === t.track.artists.length - 1
-                            ? artist.name
-                            : artist.name + ","}
-                        </Text>
-                      ))}
+                      {t.track.artists.length < 3
+                        ? t.track.artists.map((artist, index) => (
+                            <Text key={index}>
+                              {index === t.track.artists.length - 1
+                                ? artist.name
+                                : artist.name + ","}
+                            </Text>
+                          ))
+                        : t.track.artists
+                            .slice(0, 3)
+                            .map((artist, index) => (
+                              <Text>
+                                {index === 2
+                                  ? `${artist.name}...`
+                                  : `${artist.name},`}
+                              </Text>
+                            ))}
                     </Show>
                   </HStack>
                 </VStack>
