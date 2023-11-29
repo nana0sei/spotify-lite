@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar/Navbar";
 import { Grid, Show, GridItem } from "@chakra-ui/react";
 import ErrorMessage from "../components/ErrorMessage";
+import PlaybackTab from "../components/playback/PlaybackTab";
 
 const ErrorPage = () => {
   return (
@@ -30,8 +31,15 @@ const ErrorPage = () => {
           <ErrorMessage />
         </GridItem>
 
-        <GridItem area="controls" bg="blue.300">
-          Controls
+        <GridItem
+          area="controls"
+          pos="fixed"
+          w="100%"
+          bottom={0}
+          zIndex={9999}
+          pt={10}
+        >
+          <PlaybackTab />
         </GridItem>
 
         <Show below="lg">
