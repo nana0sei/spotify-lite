@@ -34,7 +34,7 @@ const PlaybackControls = () => {
           </Show>
         </HStack>
         {currentTrack === currentTrack && isPlaying && (
-          <audio src={track?.preview_url} autoPlay loop />
+          <audio src={track?.preview_url} autoPlay onEnded={togglePlayback} />
         )}
       </Box>
     </>
