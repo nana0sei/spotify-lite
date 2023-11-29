@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Show } from "@chakra-ui/react";
 import {
   IoPauseCircleSharp,
   IoPlayCircleSharp,
@@ -19,7 +19,9 @@ const PlaybackControls = () => {
     <>
       <Box>
         <HStack spacing={5}>
-          <IoPlaySkipBackSharp size="25px" />
+          <Show above="sm">
+            <IoPlaySkipBackSharp size="25px" />
+          </Show>
           <Box onClick={togglePlayback}>
             {currentTrack && isPlaying ? (
               <IoPauseCircleSharp size="50px" />
@@ -27,7 +29,9 @@ const PlaybackControls = () => {
               <IoPlayCircleSharp size="50px" />
             )}
           </Box>
-          <IoPlaySkipForwardSharp size="25px" />
+          <Show above="sm">
+            <IoPlaySkipForwardSharp size="25px" />
+          </Show>
         </HStack>
         {currentTrack === currentTrack && isPlaying && (
           <audio src={track?.preview_url} autoPlay loop />
