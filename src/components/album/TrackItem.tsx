@@ -25,8 +25,7 @@ const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
           bg: "gray.500",
         }}
         onClick={() => {
-          setCurrentTrack(id);
-          currentTrack === id && togglePlayback();
+          currentTrack != id ? setCurrentTrack(id) : togglePlayback();
         }}
         borderRadius={5}
         paddingX={1}

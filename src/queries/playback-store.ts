@@ -28,6 +28,7 @@ const usePlaybackQueryStore = create<PlaybackQueryStore>()((set) => ({
       playbackState: {
         ...state.playbackState,
         currentTrack: id,
+        isPlaying: true,
       },
     })),
 }));
