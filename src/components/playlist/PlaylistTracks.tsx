@@ -62,21 +62,23 @@ const PlaylistTracks = () => {
             </Box>
 
             {/* right section */}
-            <HStack w="60%" justifyContent="space-between">
-              <Box
-                key={index}
-                w="35%"
-                _hover={{
-                  textDecoration: "underline",
-                }}
-              >
-                <Link to={`/albums/${t.track.album.id}`} key={index}>
-                  <Summary children={t.track.album.name} limit={25} />
-                </Link>
-              </Box>
-              <Text>{t.added_at.slice(0, 10)}</Text>
-              <Text>{formatDuration(t.track.duration_ms)}</Text>
-            </HStack>
+            <Show above="sm">
+              <HStack w="60%" justifyContent="space-between">
+                <Box
+                  key={index}
+                  w="35%"
+                  _hover={{
+                    textDecoration: "underline",
+                  }}
+                >
+                  <Link to={`/albums/${t.track.album.id}`} key={index}>
+                    <Summary children={t.track.album.name} limit={25} />
+                  </Link>
+                </Box>
+                <Text>{t.added_at.slice(0, 10)}</Text>
+                <Text>{formatDuration(t.track.duration_ms)}</Text>
+              </HStack>
+            </Show>
           </HStack>
         ))}
       </Box>

@@ -4,7 +4,7 @@ import { LuClock3 } from "react-icons/lu";
 const PlaylistTracksHeader = () => {
   return (
     <>
-      <HStack paddingBottom={2} justifyContent="space-between">
+      <HStack paddingBottom={2} justifyContent="space-between" fontSize="sm">
         <Box>
           <HStack spacing={5}>
             <Text>#</Text>
@@ -14,7 +14,7 @@ const PlaylistTracksHeader = () => {
 
         <HStack w="60%" justifyContent="space-between">
           <Show above="sm">
-            <Text w="35%">Album</Text>
+            <Text w="30%">Album</Text>
             <Text>Date Added</Text>
           </Show>
           <LuClock3 />
