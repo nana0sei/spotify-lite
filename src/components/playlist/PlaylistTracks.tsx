@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import usePlaylist from "../../hooks/usePlaylist";
 import PlaylistTracksHeader from "./PlaylistTracksHeader";
-import TracklistSkeleton from "../album/TracklistSkeleton";
 import useFormatQueryStore from "../../queries/format-store";
 import PlaylistTrackItem from "./PlaylistTrackItem";
+import PlaylistTrackSkeleton from "./PlaylistTrackSkeleton";
 
 const PlaylistTracks = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const PlaylistTracks = () => {
       <Box paddingX={10}>
         <PlaylistTracksHeader />
         {skeletons.map((skeleton) => (
-          <TracklistSkeleton key={skeleton} />
+          <PlaylistTrackSkeleton key={skeleton} />
         ))}
       </Box>
     );
