@@ -29,20 +29,13 @@ const Layout = () => {
           </GridItem>
         </Show>
 
-        <GridItem area="main" px={2} pt={2} pb={20}>
-          <Card minH="700px">
+        <GridItem area="main" px={2} pt={2} pb="150px">
+          <Card pb={5}>
             <Outlet />
           </Card>
         </GridItem>
 
-        <GridItem
-          area="controls"
-          pos="fixed"
-          w="100%"
-          bottom={0}
-          zIndex={9999}
-          pt={10}
-        >
+        <GridItem area="controls" pos="fixed" w="100%" bottom={0} zIndex={9999}>
           <PlaybackTab />
           <Show below="md">
             <MobileNav />
