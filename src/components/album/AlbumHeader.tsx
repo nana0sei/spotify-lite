@@ -33,12 +33,34 @@ const AlbumHeader = () => {
   return (
     <>
       <HStack paddingY={2} paddingX={6}>
-        <Image boxSize="300px" src={album.images[0].url} />
+        <VStack>
+          <Image
+            w={{ sm: "100%", md: "50%", lg: "250px" }}
+            src={album.images[0].url}
+          />
 
+          {/* small screen album details */}
+          <Show below="md">
+            <Text as="b">{album.name}</Text>
+            {album.artists.map((artists, index) => (
+              <Text key={index} fontSize="sm">
+                {index === album.artists.length - 1
+                  ? artists.name
+                  : `${artists.name},`}
+              </Text>
+            ))}
+            <Text fontSize="sm" color="gray.500">
+              {setProjectType(album.total_tracks, album.album_type)} •{" "}
+              {releaseDate}
+            </Text>
+          </Show>
+        </VStack>
+
+        {/* big screen album details */}
         <Show above="md">
           <VStack align="flex-start">
             <Text>{setProjectType(album.total_tracks, album.album_type)}</Text>
-            <Heading size="3xl">{album.name}</Heading>
+            <Heading size="2xl">{album.name}</Heading>
             <HStack>
               {album.artists.map((artists, index) => (
                 <Text key={index} as="b">

@@ -19,9 +19,9 @@ export default {
     },
 
     {
-      name: "Whole Lotta Red",
-      id: "2QRedhP5RmKJiJ1i8VgDGR",
-      img: "https://i.scdn.co/image/ab67616d0000b27398ea0e689c91f8fea726d9bb",
+      name: "Rave & Roses Ultra",
+      id: "0nayxjaX54Frd7GsZq6Pbs",
+      img: "https://i.scdn.co/image/ab67616d0000b273963265801aa5c9740ad159b7",
     },
 
     {
