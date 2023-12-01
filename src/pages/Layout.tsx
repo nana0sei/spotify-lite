@@ -3,6 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 import { Outlet } from "react-router-dom";
 import "../index.css";
 import PlaybackTab from "../components/playback/PlaybackTab";
+import MobileNav from "../components/navbar/MobileNav";
 
 const Layout = () => {
   return (
@@ -43,13 +44,10 @@ const Layout = () => {
           pt={10}
         >
           <PlaybackTab />
+          <Show below="md">
+            <MobileNav />
+          </Show>
         </GridItem>
-
-        <Show below="lg">
-          <GridItem area="mobile-nav" bg="green.300">
-            Mobile Nav
-          </GridItem>
-        </Show>
       </Grid>
     </>
   );
