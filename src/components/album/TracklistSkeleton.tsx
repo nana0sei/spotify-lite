@@ -8,8 +8,8 @@ const TracklistSkeleton = () => {
           paddingY={3}
           width="40%"
           noOfLines={2}
-          spacing={5}
-          skeletonHeight="5"
+          spacing={3}
+          skeletonHeight="3"
         />
       </Box>
     </>
