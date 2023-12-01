@@ -75,10 +75,10 @@ const PlaylistTrackItem = ({
                       </Text>
                     ))
                   : artists
-                      .slice(0, 3)
+                      .slice(0, 2)
                       .map((artist, index) => (
                         <Text>
-                          {index === 2 ? `${artist}...` : `${artist},`}
+                          {index === 1 ? `${artist}...` : `${artist},`}
                         </Text>
                       ))}
               </HStack>
