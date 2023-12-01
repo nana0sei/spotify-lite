@@ -14,6 +14,12 @@ const PlaylistHeader = () => {
   const { id } = useParams();
   const { data: playlist, isLoading, error } = usePlaylist(id!);
 
+  const removeAnchorTags = (input: string | null) => {
+    if (!input) return "";
+
+    return input.replace(/<a\b[^>]*>(.*?)<\/a>/g, "$1");
+  };
+
   if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !playlist) throw error;
 
@@ -27,7 +33,7 @@ const PlaylistHeader = () => {
             <Text>Playlist</Text>
             <Heading size="3xl">{playlist.name}</Heading>
             <Text pt={5} fontSize="sm" color="gray.600" as="b">
-              {playlist.description}
+              {removeAnchorTags(playlist.description)}
             </Text>
             <HStack>
               <Text as="b">{playlist.owner.display_name} • </Text>
