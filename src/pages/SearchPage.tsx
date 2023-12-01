@@ -1,7 +1,8 @@
 import { SetStateAction, useState } from "react";
 import SearchInput from "../components/search/SearchInput";
-import { Box } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
+import NavButtons from "../components/navbar/NavButtons";
 
 const SearchPage = () => {
   const [query, setQuery] = useState("");
@@ -15,7 +16,10 @@ const SearchPage = () => {
   return (
     <>
       <Box paddingY={2} paddingX={5}>
-        <SearchInput onChange={handleChange} query={query} />
+        <HStack w="100%">
+          <NavButtons />
+          <SearchInput onChange={handleChange} query={query} />
+        </HStack>
         <Outlet />
       </Box>
     </>

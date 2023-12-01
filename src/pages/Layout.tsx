@@ -1,12 +1,10 @@
-import { Grid, Show, GridItem, Card, HStack, Box } from "@chakra-ui/react";
+import { Grid, Show, GridItem, Card } from "@chakra-ui/react";
 import Navbar from "../components/navbar/Navbar";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "../index.css";
 import PlaybackTab from "../components/playback/PlaybackTab";
-import { AiOutlineLeftCircle, AiOutlineRightCircle } from "react-icons/ai";
 
 const Layout = () => {
-  const navigate = useNavigate();
   return (
     <>
       <Grid
@@ -32,14 +30,6 @@ const Layout = () => {
 
         <GridItem area="main" px={2} pt={2} pb={20}>
           <Card minH="700px">
-            <HStack spacing={2} px={4} py={2}>
-              <Box onClick={() => navigate(-1)}>
-                <AiOutlineLeftCircle size="30px" />
-              </Box>
-              <Box onClick={() => navigate(+1)}>
-                <AiOutlineRightCircle size="30px" />
-              </Box>
-            </HStack>
             <Outlet />
           </Card>
         </GridItem>

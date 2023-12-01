@@ -1,6 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import HomeAlbums from "../components/home-components/HomeAlbums";
 import NewReleases from "../components/home-components/NewReleases";
+import NavButtons from "../components/navbar/NavButtons";
 
 const Homepage = () => {
   const currentTime = new Date();
@@ -17,7 +18,10 @@ const Homepage = () => {
 
   return (
     <>
-      <Box px={5} py={5}>
+      <Box paddingY={2} paddingX={5}>
+        <NavButtons />
+      </Box>
+      <Box px={5} py={2}>
         <Heading fontSize="3xl">{greeting}</Heading>
         <HomeAlbums />
 
