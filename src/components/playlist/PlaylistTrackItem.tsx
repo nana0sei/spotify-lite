@@ -56,29 +56,31 @@ const PlaylistTrackItem = ({
               <Text size="2xl">{track_number}</Text>
             </Box>
             <VStack align="flex-start" spacing={1} paddingY={2}>
-              <Text as="b">
-                <Summary children={name} limit={35} />
-              </Text>
+              <HStack spacing={1}>
+                <Text as="b">
+                  <Summary children={name} limit={35} />
+                </Text>
+                <Show below="md">{explicit && <ExplicitTag />}</Show>
+              </HStack>
 
               {/* artist names and explicit tags */}
               <HStack spacing={1}>
-                {explicit && <ExplicitTag />}
+                <Show above="md">{explicit && <ExplicitTag />}</Show>
                 {/* dynamically render artist names */}
-                <Show above="md">
-                  {artists.length < 3
-                    ? artists.map((artist, index) => (
-                        <Text key={index}>
-                          {index === artists.length - 1 ? artist : artist + ","}
+
+                {artists.length < 3
+                  ? artists.map((artist, index) => (
+                      <Text key={index}>
+                        {index === artists.length - 1 ? artist : artist + ","}
+                      </Text>
+                    ))
+                  : artists
+                      .slice(0, 3)
+                      .map((artist, index) => (
+                        <Text>
+                          {index === 2 ? `${artist}...` : `${artist},`}
                         </Text>
-                      ))
-                    : artists
-                        .slice(0, 3)
-                        .map((artist, index) => (
-                          <Text>
-                            {index === 2 ? `${artist}...` : `${artist},`}
-                          </Text>
-                        ))}
-                </Show>
+                      ))}
               </HStack>
             </VStack>
           </HStack>

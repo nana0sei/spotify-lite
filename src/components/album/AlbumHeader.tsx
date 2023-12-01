@@ -17,7 +17,7 @@ const AlbumHeader = () => {
   const { data: album, isLoading, error } = useAlbum(id!);
   const { formatAlbumLength, setProjectType } = useFormatQueryStore();
 
-  if (isLoading) return <Skeleton boxSize="25" marginY={2} marginX={6} />;
+  if (isLoading) return <Skeleton boxSize="300px" marginY={2} marginX={6} />;
   if (error || !album) throw error;
 
   const releaseDate = album.release_date.slice(0, 4);
