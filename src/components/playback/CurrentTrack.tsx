@@ -35,7 +35,7 @@ const CurrentTrack = () => {
 
   return (
     <>
-      <HStack spacing={2} py={1} px={2}>
+      <HStack spacing={2} py={1} px={2} fontSize="sm">
         <Link to={`/albums/${track?.album.id}`}>
           <Image
             src={track?.album.images[0].url}
@@ -47,13 +47,19 @@ const CurrentTrack = () => {
           <VStack spacing={1} align="flex-start">
             <Text as="b">{track?.name}</Text>
             <HStack spacing={1}>
-              {track?.artists.map((artist, index) => (
-                <Text key={index} fontSize="sm">
-                  {index === track.artists.length - 1
-                    ? artist.name
-                    : artist.name + ","}
-                </Text>
-              ))}
+              {track?.artists && track?.artists.length < 3
+                ? track?.artists.map((artist, index) => (
+                    <Text key={index} whiteSpace="nowrap">
+                      {index === track?.artists.length - 1
+                        ? artist.name
+                        : artist.name + ","}
+                    </Text>
+                  ))
+                : track?.artists.slice(0, 3).map((artist, index) => (
+                    <Text whiteSpace="nowrap" fontSize="xs">
+                      {index === 2 ? `${artist.name}...` : `${artist.name},`}
+                    </Text>
+                  ))}
             </HStack>
           </VStack>
         </Box>

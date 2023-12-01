@@ -5,7 +5,7 @@ const TracklistHeader = () => {
   return (
     <>
       <Show above="sm">
-        <HStack paddingBottom={2} justifyContent="space-between">
+        <HStack paddingBottom={2} justifyContent="space-between" fontSize="sm">
           <Box>
             <HStack spacing={5}>
               <Text>#</Text>

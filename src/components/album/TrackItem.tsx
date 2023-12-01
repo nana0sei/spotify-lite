@@ -29,6 +29,7 @@ const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
         }}
         borderRadius={5}
         paddingX={1}
+        fontSize="sm"
       >
         {/* left section */}
 
