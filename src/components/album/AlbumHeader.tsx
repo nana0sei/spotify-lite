@@ -15,25 +15,12 @@ import useFormatQueryStore from "../../queries/format-store";
 const AlbumHeader = () => {
   const { id } = useParams();
   const { data: album, isLoading, error } = useAlbum(id!);
-  const { formatAlbumLength } = useFormatQueryStore();
+  const { formatAlbumLength, setProjectType } = useFormatQueryStore();
 
   if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
   if (error || !album) throw error;
 
   const releaseDate = album.release_date.slice(0, 4);
-
-  const setProjectType = (p: string) => {
-    let projectType = "";
-    p === "album"
-      ? (projectType = "Album")
-      : p === "compilation"
-      ? (projectType = "Compilation")
-      : p === "single" && album.total_tracks === 1
-      ? (projectType = "Single")
-      : (projectType = "EP");
-
-    return projectType;
-  };
 
   const getDuration = (album: Album) => {
     let totalDuration = 0;
@@ -50,7 +37,7 @@ const AlbumHeader = () => {
 
         <Show above="md">
           <VStack align="flex-start">
-            <Text>{setProjectType(album.album_type)}</Text>
+            <Text>{setProjectType(album.total_tracks, album.album_type)}</Text>
             <Heading size="3xl">{album.name}</Heading>
             <HStack>
               {album.artists.map((artists, index) => (

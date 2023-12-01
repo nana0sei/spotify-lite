@@ -9,6 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import useFormatQueryStore from "../../queries/format-store";
 
 interface Props {
   img?: string;
@@ -16,9 +17,11 @@ interface Props {
   type?: string;
   link: string;
   artist?: string[];
+  total_tracks?: number;
 }
 
-const TopAlbum = ({ img, name, type, link, artist }: Props) => {
+const TopAlbum = ({ img, name, type, link, artist, total_tracks }: Props) => {
+  const { setProjectType } = useFormatQueryStore();
   return (
     <>
       <Link to={link}>
@@ -35,7 +38,9 @@ const TopAlbum = ({ img, name, type, link, artist }: Props) => {
                 <Heading fontSize="3xl">{name}</Heading>
                 <HStack spacing={5}>
                   <Text>{artist}</Text>
-                  <Badge borderRadius={5}>{type}</Badge>
+                  <Badge borderRadius={5}>
+                    {setProjectType(total_tracks, type)}
+                  </Badge>
                 </HStack>
               </VStack>
             </CardBody>

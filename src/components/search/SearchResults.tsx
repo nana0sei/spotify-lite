@@ -38,6 +38,7 @@ const SearchResults = () => {
             name={topAlbum?.name}
             type={topAlbum?.album_type}
             link={`/albums/${topAlbum?.id}`}
+            total_tracks={topAlbum?.total_tracks}
             artist={topAlbum?.artists.map((artist, index) =>
               index === topAlbum.artists.length - 1
                 ? artist.name

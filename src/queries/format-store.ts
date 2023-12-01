@@ -3,6 +3,7 @@ import { create } from "zustand";
 interface FormatQueryStore {
   formatDuration: (ms: number | number) => string;
   formatAlbumLength: (ms: number) => string;
+  setProjectType: (total_tracks?: number, project?: string) => string;
 }
 
 const useFormatQueryStore = create<FormatQueryStore>(() => ({
@@ -31,6 +32,19 @@ const useFormatQueryStore = create<FormatQueryStore>(() => ({
     } ${minutes} min ${seconds} sec`;
 
     return formattedTime;
+  },
+
+  setProjectType: (total_tracks?: number, project?: string) => {
+    let projectType = "";
+    project === "album"
+      ? (projectType = "Album")
+      : project === "compilation"
+      ? (projectType = "Compilation")
+      : project === "single" && total_tracks === 1
+      ? (projectType = "Single")
+      : (projectType = "EP");
+
+    return projectType;
   },
 }));
 

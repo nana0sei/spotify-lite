@@ -14,7 +14,7 @@ const TrackList = () => {
 
   if (isLoading)
     return (
-      <Box paddingX={10} fontSize="sm">
+      <Box paddingX={10}>
         <TracklistHeader />
         {skeletons.map((skeleton) => (
           <TracklistSkeleton key={skeleton} />
@@ -25,7 +25,7 @@ const TrackList = () => {
 
   return (
     <>
-      <Box paddingX={10} fontSize="sm">
+      <Box paddingX={10}>
         <TracklistHeader />
         {album.tracks.items.map((tracks, index) => (
           <TrackItem
