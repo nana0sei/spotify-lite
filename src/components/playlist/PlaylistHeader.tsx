@@ -20,7 +20,7 @@ const PlaylistHeader = () => {
     return input.replace(/<a\b[^>]*>(.*?)<\/a>/g, "$1");
   };
 
-  if (isLoading) return <Skeleton boxSize="300px" marginY={5} marginX={10} />;
+  if (isLoading) return <Skeleton boxSize="300px" marginY={2} marginX={6} />;
   if (error || !playlist) throw error;
 
   return (

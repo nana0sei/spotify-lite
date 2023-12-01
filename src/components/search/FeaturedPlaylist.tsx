@@ -27,7 +27,9 @@ const FeaturedPlaylist = () => {
             <Card key={index} bg="gray.800" _hover={{ bg: "gray.500" }}>
               <VStack p={3} align="flex-start">
                 <Image src={playlist.images[0].url} key={index} />
-                <Text as="b">{playlist.name}</Text>
+                <Text as="b">
+                  <Summary limit={16}>{playlist.name}</Summary>
+                </Text>
 
                 <Summary
                   children={playlist.description}
