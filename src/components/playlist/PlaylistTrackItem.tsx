@@ -41,15 +41,17 @@ const PlaylistTrackItem = ({
         _hover={{
           bg: "gray.500",
         }}
-        onClick={() => {
-          currentTrack != id ? setCurrentTrack(id) : togglePlayback();
-        }}
         borderRadius={5}
         paddingX={1}
       >
         {/* left section */}
         <Box>
-          <HStack spacing={3}>
+          <HStack
+            spacing={3}
+            onClick={() => {
+              currentTrack != id ? setCurrentTrack(id) : togglePlayback();
+            }}
+          >
             <Box boxSize="20px">
               <Text size="2xl">{track_number}</Text>
             </Box>
