@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import useTracks from "../../hooks/useTrack";
 import usePlaybackQueryStore from "../../queries/playback-store";
+import { Link } from "react-router-dom";
 
 const CurrentTrack = () => {
   const {
@@ -35,11 +36,13 @@ const CurrentTrack = () => {
   return (
     <>
       <HStack spacing={2} py={1} px={2}>
-        <Image
-          src={track?.album.images[0].url}
-          boxSize="50px"
-          borderRadius={5}
-        />
+        <Link to={`/albums/${track?.album.id}`}>
+          <Image
+            src={track?.album.images[0].url}
+            boxSize="50px"
+            borderRadius={5}
+          />
+        </Link>
         <Box>
           <VStack spacing={1} align="flex-start">
             <Text as="b">{track?.name}</Text>
