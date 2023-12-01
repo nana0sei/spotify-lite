@@ -32,7 +32,7 @@ const AlbumHeader = () => {
 
   return (
     <>
-      <HStack paddingY={5} paddingX={10}>
+      <HStack paddingY={2} paddingX={6}>
         <Image boxSize="300px" src={album.images[0].url} />
 
         <Show above="md">

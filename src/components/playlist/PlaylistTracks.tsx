@@ -14,7 +14,7 @@ const PlaylistTracks = () => {
 
   if (isLoading)
     return (
-      <Box paddingX={10}>
+      <Box paddingX={6}>
         <PlaylistTracksHeader />
         {skeletons.map((skeleton) => (
           <PlaylistTrackSkeleton key={skeleton} />
@@ -25,7 +25,7 @@ const PlaylistTracks = () => {
 
   return (
     <>
-      <Box paddingX={10}>
+      <Box paddingX={6}>
         <PlaylistTracksHeader />
         {playlist.tracks.items.map((t, index) => (
           <PlaylistTrackItem

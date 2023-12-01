@@ -25,7 +25,7 @@ const TrackList = () => {
 
   return (
     <>
-      <Box paddingX={10}>
+      <Box paddingX={6}>
         <TracklistHeader />
         {album.tracks.items.map((tracks, index) => (
           <TrackItem
