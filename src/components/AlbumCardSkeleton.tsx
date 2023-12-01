@@ -10,7 +10,7 @@ const AlbumCardSkeleton = () => {
             paddingY={3}
             width="100%"
             noOfLines={2}
-            skeletonHeight="5"
+            skeletonHeight="3"
           />{" "}
         </VStack>
       </Card>
