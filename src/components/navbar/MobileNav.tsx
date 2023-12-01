@@ -1,4 +1,4 @@
-import { Box, Divider, HStack, Heading } from "@chakra-ui/react";
+import { Divider, HStack } from "@chakra-ui/react";
 import { BiSearch } from "react-icons/bi";
 import { MdHomeFilled } from "react-icons/md";
 import { Link } from "react-router-dom";

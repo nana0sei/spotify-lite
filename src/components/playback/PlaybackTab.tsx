@@ -1,5 +1,6 @@
 import {
   HStack,
+  Show,
   Slider,
   SliderFilledTrack,
   SliderThumb,
@@ -14,18 +15,19 @@ const PlaybackTab = () => {
       <HStack justifyContent="space-between" h="70px" bg="gray.700" padding={2}>
         <CurrentTrack />
         <PlaybackControls />
-
-        <Slider
-          aria-label="slider-ex-1"
-          defaultValue={30}
-          colorScheme="green"
-          w="10%"
-        >
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-          <SliderThumb />
-        </Slider>
+        <Show above="sm">
+          <Slider
+            aria-label="slider-ex-1"
+            defaultValue={100}
+            colorScheme="green"
+            w="10%"
+          >
+            <SliderTrack>
+              <SliderFilledTrack />
+            </SliderTrack>
+            <SliderThumb />
+          </Slider>
+        </Show>
       </HStack>
     </>
   );
