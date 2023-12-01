@@ -26,7 +26,23 @@ const PlaylistHeader = () => {
   return (
     <>
       <HStack paddingY={2} paddingX={6}>
-        <Image boxSize="300px" src={playlist.images[0].url} />
+        <VStack>
+          <Image
+            w={{ sm: "100%", md: "50%", lg: "250px" }}
+            src={playlist.images[0].url}
+          />
+
+          {/* small screen album details */}
+          <Show below="md">
+            <Text as="b">{playlist.name}</Text>
+            <Text fontSize="sm">
+              {playlist.owner.display_name} • {playlist.followers.total} likes
+            </Text>
+            <Text fontSize="sm" color="gray.500">
+              {removeAnchorTags(playlist.description)}
+            </Text>
+          </Show>
+        </VStack>
 
         <Show above="md">
           <VStack align="flex-start">
