@@ -16,7 +16,7 @@ const SearchPage = () => {
   return (
     <>
       <Box paddingY={2} paddingX={5}>
-        <HStack w="100%">
+        <HStack>
           <NavButtons />
           <SearchInput onChange={handleChange} query={query} />
         </HStack>
