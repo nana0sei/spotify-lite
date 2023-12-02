@@ -13,9 +13,9 @@ export default {
     },
 
     {
-      name: "Fountain Baby",
-      id: "3dKdkVeR6hPjAOH5K2nYTh",
-      img: "https://i.scdn.co/image/ab67616d0000b273c8ddabbbb56597f7f1fc6828",
+      name: "PERCEPTION EP",
+      id: "7FoeJAWiqVKLukcD4Ksrs0",
+      img: "https://i.scdn.co/image/ab67616d0000b273e5c5a0c07eae8a92bae7bfe6",
     },
 
     {
@@ -31,9 +31,9 @@ export default {
     },
 
     {
-      name: "DS4EVER",
-      id: "02uWB8Kekadkl3yGBoOOcx",
-      img: "https://i.scdn.co/image/ab67616d0000b27314d91ebdd6d7e2931322cc1a",
+      name: "Love Sick (Deluxe)",
+      id: "2Q2TRdT994vTzGE3Grmmht",
+      img: "https://i.scdn.co/image/ab67616d0000b273f5e27c2aa0b110c2b6611577",
     },
   ],
 };
