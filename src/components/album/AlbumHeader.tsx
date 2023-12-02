@@ -17,7 +17,7 @@ const AlbumHeader = () => {
   const { data: album, isLoading, error } = useAlbum(id!);
   const { formatAlbumLength, setProjectType } = useFormatQueryStore();
 
-  if (isLoading) return <Skeleton boxSize="300px" marginY={2} marginX={6} />;
+  if (isLoading) return <Skeleton boxSize="250px" marginY={2} marginX={6} />;
   if (error || !album) throw error;
 
   const releaseDate = album.release_date.slice(0, 4);
@@ -60,7 +60,7 @@ const AlbumHeader = () => {
         <Show above="md">
           <VStack align="flex-start">
             <Text>{setProjectType(album.total_tracks, album.album_type)}</Text>
-            <Heading size="2xl">{album.name}</Heading>
+            <Heading size="xl">{album.name}</Heading>
             <HStack>
               {album.artists.map((artists, index) => (
                 <Text key={index} as="b">

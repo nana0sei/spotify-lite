@@ -20,7 +20,7 @@ const PlaylistHeader = () => {
     return input.replace(/<a\b[^>]*>(.*?)<\/a>/g, "$1");
   };
 
-  if (isLoading) return <Skeleton boxSize="300px" marginY={2} marginX={6} />;
+  if (isLoading) return <Skeleton boxSize="250px" marginY={2} marginX={6} />;
   if (error || !playlist) throw error;
 
   return (
@@ -47,8 +47,8 @@ const PlaylistHeader = () => {
         <Show above="md">
           <VStack align="flex-start">
             <Text>Playlist</Text>
-            <Heading size="2xl">{playlist.name}</Heading>
-            <Text pt={5} fontSize="sm" color="gray.600" as="b">
+            <Heading size="xl">{playlist.name}</Heading>
+            <Text fontSize="sm" color="gray.600" as="b">
               {removeAnchorTags(playlist.description)}
             </Text>
             <HStack>
