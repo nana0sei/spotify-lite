@@ -14,7 +14,8 @@ const getAccessToken = () => {
   const tokenURL = "https://accounts.spotify.com/api/token";
 
   return axios
-    .post<Token>(tokenURL, data, {
+    .post<Token>(tokenURL, {
+      data: data,
       headers: {
         Authorization: "Basic " + token,
         "Content-Type": "application/x-www-form-urlencoded",
