@@ -47,7 +47,7 @@ const PlaylistHeader = () => {
         <Show above="md">
           <VStack align="flex-start">
             <Text>Playlist</Text>
-            <Heading size="3xl">{playlist.name}</Heading>
+            <Heading size="2xl">{playlist.name}</Heading>
             <Text pt={5} fontSize="sm" color="gray.600" as="b">
               {removeAnchorTags(playlist.description)}
             </Text>
