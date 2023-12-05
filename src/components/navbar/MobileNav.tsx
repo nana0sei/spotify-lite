@@ -8,15 +8,15 @@ const MobileNav = () => {
     <HStack
       justifyContent="space-evenly"
       bg="gray.800"
-      h="70px"
+      h="50px"
       alignContent="center"
     >
       <Link to="/">
-        <MdHomeFilled size="50px" />
+        <MdHomeFilled size="25px" />
       </Link>
       <Divider orientation="vertical" />
       <Link to="/search">
-        <BiSearch size="50px" />
+        <BiSearch size="25px" />
       </Link>
     </HStack>
   );
