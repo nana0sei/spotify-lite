@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import useAlbum from "../../hooks/useAlbum";
 import {
   HStack,
   Heading,
@@ -11,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Album from "../../entities/Album";
 import useFormatQueryStore from "../../queries/format-store";
+import useAlbum from "../../hooks/useAlbum";
 
 const AlbumHeader = () => {
   const { id } = useParams();
