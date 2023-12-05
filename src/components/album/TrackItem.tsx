@@ -59,7 +59,9 @@ const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
           </HStack>
         </Box>
 
-        <Text>{duration}</Text>
+        <Show above="sm">
+          <Text>{duration}</Text>
+        </Show>
       </HStack>
     </>
   );
