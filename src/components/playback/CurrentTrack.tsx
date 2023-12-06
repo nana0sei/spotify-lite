@@ -45,7 +45,18 @@ const CurrentTrack = () => {
         </Link>
         <Box>
           <VStack spacing={1} align="flex-start">
-            <Text as="b">{track?.name}</Text>
+            {track?.name && track?.name.length < 40 ? (
+              <Text as="b">{track?.name}</Text>
+            ) : (
+              <Text as="b">
+                <div className="marquee">
+                  <div>
+                    <span>{track?.name} </span>
+                    <span>{track?.name} </span>
+                  </div>
+                </div>
+              </Text>
+            )}
             <HStack spacing={1}>
               {track?.artists && track?.artists.length < 3
                 ? track?.artists.map((artist, index) => (
