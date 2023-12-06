@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { BiPlus } from "react-icons/bi";
-import CustomAlert from "../CustomAlert";
+import CustomAlert from "./CustomAlert";
 
 const LowerNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

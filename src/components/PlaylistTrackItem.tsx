@@ -1,8 +1,8 @@
 import { HStack, VStack, Show, Box, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import ExplicitTag from "../ExplicitTag";
-import Summary from "../Summary";
-import usePlaybackQueryStore from "../../queries/playback-store";
+import ExplicitTag from "./ExplicitTag";
+import Summary from "./Summary";
+import usePlaybackQueryStore from "../queries/playback-store";
 
 interface Props {
   id: string;

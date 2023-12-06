@@ -5,8 +5,8 @@ import {
   IoPlaySkipBackSharp,
   IoPlaySkipForwardSharp,
 } from "react-icons/io5";
-import usePlaybackQueryStore from "../../queries/playback-store";
-import useTracks from "../../hooks/useTrack";
+import usePlaybackQueryStore from "../queries/playback-store";
+import useTracks from "../hooks/useTrack";
 
 const PlaybackControls = () => {
   const {

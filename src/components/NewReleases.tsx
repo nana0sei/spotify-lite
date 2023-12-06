@@ -1,8 +1,8 @@
 import { Card, Image, Text, VStack, SimpleGrid } from "@chakra-ui/react";
-import useNewReleases from "../../hooks/useNewReleases";
-import Summary from "../Summary";
+import useNewReleases from "../hooks/useNewReleases";
+import Summary from "./Summary";
 import { Link } from "react-router-dom";
-import AlbumCardSkeleton from "../AlbumCardSkeleton";
+import AlbumCardSkeleton from "./AlbumCardSkeleton";
 
 const NewReleases = () => {
   const { data: newReleases, isLoading, error } = useNewReleases();

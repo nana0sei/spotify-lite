@@ -1,8 +1,8 @@
 import { SetStateAction, useState } from "react";
-import SearchInput from "../components/search/SearchInput";
+import SearchInput from "../components/SearchInput";
 import { Box, HStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
-import NavButtons from "../components/navbar/NavButtons";
+import NavButtons from "../components/NavButtons";
 
 const SearchPage = () => {
   const [query, setQuery] = useState("");

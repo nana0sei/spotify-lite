@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import usePlaylist from "../../hooks/usePlaylist";
+import usePlaylist from "../hooks/usePlaylist";
 import { Card, Spinner, Image, Text, CardBody } from "@chakra-ui/react";
 
 const PlaylistCard = () => {

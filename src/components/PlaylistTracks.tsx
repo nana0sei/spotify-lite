@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
-import usePlaylist from "../../hooks/usePlaylist";
+import usePlaylist from "../hooks/usePlaylist";
 import PlaylistTracksHeader from "./PlaylistTracksHeader";
-import useFormatQueryStore from "../../queries/format-store";
+import useFormatQueryStore from "../queries/format-store";
 import PlaylistTrackItem from "./PlaylistTrackItem";
 import PlaylistTrackSkeleton from "./PlaylistTrackSkeleton";
 

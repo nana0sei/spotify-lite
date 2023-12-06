@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import useAlbum from "../../hooks/useAlbum";
+import useAlbum from "../hooks/useAlbum";
 import { Box } from "@chakra-ui/react";
 import TracklistHeader from "./TracklistHeader";
 import TracklistSkeleton from "./TracklistSkeleton";
-import useFormatQueryStore from "../../queries/format-store";
+import useFormatQueryStore from "../queries/format-store";
 import TrackItem from "./TrackItem";
 
 const TrackList = () => {
