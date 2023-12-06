@@ -50,10 +50,7 @@ const CurrentTrack = () => {
             ) : (
               <Text as="b">
                 <div className="marquee">
-                  <div>
-                    <span>{track?.name} </span>
-                    <span>{track?.name} </span>
-                  </div>
+                  <span>{track?.name} </span>
                 </div>
               </Text>
             )}
