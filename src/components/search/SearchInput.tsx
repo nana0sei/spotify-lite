@@ -28,7 +28,6 @@ const SearchInput = ({ query, onChange }: Props) => {
           ref={ref}
           borderRadius={20}
           focusBorderColor="white"
-          minW="40%"
           placeholder="What do you want to listen to?"
           variant="filled"
         />

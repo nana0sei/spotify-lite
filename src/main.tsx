@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme.ts";
+import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes.tsx";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
