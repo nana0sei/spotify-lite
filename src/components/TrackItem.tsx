@@ -47,13 +47,11 @@ const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
               <HStack spacing={1}>
                 <Show above="md">{explicit && <ExplicitTag />}</Show>
                 {/* dynamically render artist names */}
-                <Show above="md">
-                  {artists.map((artist, index) => (
-                    <Text key={index}>
-                      {index === artists.length - 1 ? artist : artist + ","}
-                    </Text>
-                  ))}
-                </Show>
+                {artists.map((artist, index) => (
+                  <Text key={index}>
+                    {index === artists.length - 1 ? artist : artist + ","}
+                  </Text>
+                ))}
               </HStack>
             </VStack>
           </HStack>
