@@ -55,7 +55,7 @@ const CurrentTrack = () => {
               </Text>
             )}
             <HStack spacing={1}>
-              {track?.artists && track?.artists.length < 3
+              {track?.artists && track?.artists.length < 4
                 ? track?.artists.map((artist, index) => (
                     <Text key={index} whiteSpace="nowrap">
                       {index === track?.artists.length - 1
