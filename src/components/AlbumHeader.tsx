@@ -35,7 +35,7 @@ const AlbumHeader = () => {
       <HStack paddingY={2} paddingX={6}>
         <VStack>
           <Image
-            w={{ sm: "100%", md: "50%", lg: "250px" }}
+            w={{ sm: "100%", md: "250px", lg: "250px" }}
             src={album.images[0].url}
           />
 
