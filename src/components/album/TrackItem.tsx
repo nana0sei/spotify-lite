@@ -1,6 +1,6 @@
 import { VStack, HStack, Text, Show, Box } from "@chakra-ui/react";
-import ExplicitTag from "./ExplicitTag";
-import usePlaybackQueryStore from "../queries/playback-store";
+import ExplicitTag from "../ExplicitTag";
+import usePlaybackQueryStore from "../../queries/playback-store";
 
 interface Props {
   id: string;

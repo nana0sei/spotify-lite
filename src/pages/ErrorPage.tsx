@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import { Grid, Show, GridItem } from "@chakra-ui/react";
 import ErrorMessage from "../components/ErrorMessage";
-import PlaybackTab from "../components/PlaybackTab";
-import MobileNav from "../components/MobileNav";
+import PlaybackTab from "../components/playback/PlaybackTab";
+import MobileNav from "../components/navbar/MobileNav";
 
 const ErrorPage = () => {
   return (

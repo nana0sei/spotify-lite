@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import HomeAlbums from "../components/HomeAlbums";
 import NewReleases from "../components/NewReleases";
-import NavButtons from "../components/NavButtons";
+import NavButtons from "../components/navbar/NavButtons";
 
 const Homepage = () => {
   const currentTime = new Date();

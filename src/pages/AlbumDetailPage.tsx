@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import AlbumHeader from "../components/AlbumHeader";
-import TrackList from "../components/TrackList";
-import NavButtons from "../components/NavButtons";
+import AlbumHeader from "../components/album/AlbumHeader";
+import TrackList from "../components/album/TrackList";
+import NavButtons from "../components/navbar/NavButtons";
 
 const AlbumDetailPage = () => {
   return (

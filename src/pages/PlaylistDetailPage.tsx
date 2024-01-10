@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
-import PlaylistHeader from "../components/PlaylistHeader";
-import PlaylistTracks from "../components/PlaylistTracks";
-import NavButtons from "../components/NavButtons";
+import PlaylistHeader from "../components/playlist/PlaylistHeader";
+import PlaylistTracks from "../components/playlist/PlaylistTracks";
+import NavButtons from "../components/navbar/NavButtons";
 
 const PlaylistDetailPage = () => {
   return (

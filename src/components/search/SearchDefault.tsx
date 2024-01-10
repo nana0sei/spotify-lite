@@ -1,5 +1,5 @@
 import { Box, Heading } from "@chakra-ui/react";
-import FeaturedPlaylist from "./FeaturedPlaylist";
+import FeaturedPlaylist from "../playlist/FeaturedPlaylist";
 
 const SearchDefault = () => {
   return (

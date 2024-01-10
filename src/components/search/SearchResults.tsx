@@ -1,6 +1,6 @@
 import { Center, Heading, SimpleGrid, Spinner, VStack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import useSearch from "../hooks/useSearch";
+import useSearch from "../../hooks/useSearch";
 import AlbumResult from "./AlbumResult";
 import TopResult from "./TopResult";
 import TopAlbum from "./TopAlbum";

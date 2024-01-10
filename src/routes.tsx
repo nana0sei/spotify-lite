@@ -4,8 +4,8 @@ import Homepage from "./pages/Homepage";
 import SearchPage from "./pages/SearchPage";
 import AlbumDetailPage from "./pages/AlbumDetailPage";
 import ErrorPage from "./pages/ErrorPage";
-import SearchResults from "./components/SearchResults";
-import SearchDefault from "./components/SearchDefault";
+import SearchResults from "./components/search/SearchResults";
+import SearchDefault from "./components/search/SearchDefault";
 import PlaylistDetailPage from "./pages/PlaylistDetailPage";
 
 const router = createBrowserRouter([

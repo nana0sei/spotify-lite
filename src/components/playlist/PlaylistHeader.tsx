@@ -8,7 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import usePlaylist from "../hooks/usePlaylist";
+import usePlaylist from "../../hooks/usePlaylist";
 
 const PlaylistHeader = () => {
   const { id } = useParams();

@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import useFormatQueryStore from "../queries/format-store";
+import useFormatQueryStore from "../../queries/format-store";
 
 interface Props {
   img?: string;
