@@ -40,8 +40,9 @@ const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
             </Box>
             <VStack align="flex-start" spacing={1} paddingY={2}>
               <HStack spacing={1}>
-                <Text as="b">{name}</Text>
-                <Show below="md">{explicit && <ExplicitTag />}</Show>
+                <Text as="b">
+                  {name} <Show below="md">{explicit && <ExplicitTag />}</Show>
+                </Text>
               </HStack>
               {/* artist names and explicit tags */}
               <HStack spacing={1}>

@@ -1,9 +1,9 @@
 export default {
   data: [
     {
-      name: "ASTROWORLD",
-      id: "41GuZcammIkupMPKH2OJ6I",
-      img: "https://i.scdn.co/image/ab67616d0000b273072e9faef2ef7b6db63834a3",
+      name: "UTOPIA",
+      id: "18NOKLkZETa4sWwLMIm0UZ",
+      img: "https://i.scdn.co/image/ab67616d0000b273881d8d8378cd01099babcd44",
     },
 
     {
@@ -13,21 +13,21 @@ export default {
     },
 
     {
-      name: "PERCEPTION EP",
-      id: "7FoeJAWiqVKLukcD4Ksrs0",
-      img: "https://i.scdn.co/image/ab67616d0000b273e5c5a0c07eae8a92bae7bfe6",
+      name: "SOS",
+      id: "07w0rG5TETcyihsEIZR3qG",
+      img: "https://i.scdn.co/image/ab67616d0000b27370dbc9f47669d120ad874ec1",
     },
 
     {
-      name: "Rave & Roses Ultra",
-      id: "0nayxjaX54Frd7GsZq6Pbs",
-      img: "https://i.scdn.co/image/ab67616d0000b273963265801aa5c9740ad159b7",
+      name: "RAVAGE",
+      id: "53oOgXjjaTx42Sy2exYlH9",
+      img: "https://i.scdn.co/image/ab67616d0000b273a0b4e05b489e5e037028b496",
     },
 
     {
-      name: "CALL ME IF YOU GET LOST",
-      id: "45ba6QAtNrdv6Ke4MFOKk9",
-      img: "https://i.scdn.co/image/ab67616d0000b273696b4e67423edd64784bfbb4",
+      name: "Ignorance is Bliss",
+      id: "22zpCX6Nb9ppOVklalvGec",
+      img: "https://i.scdn.co/image/ab67616d0000b27348f2487a18a735f457404eb9",
     },
 
     {

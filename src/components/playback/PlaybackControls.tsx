@@ -7,6 +7,7 @@ import {
 } from "react-icons/io5";
 import usePlaybackQueryStore from "../../queries/playback-store";
 import useTracks from "../../hooks/useTrack";
+import { useHotkeys } from "react-hotkeys-hook";
 
 const PlaybackControls = () => {
   const {
@@ -14,6 +15,8 @@ const PlaybackControls = () => {
     playbackState: { isPlaying, currentTrack },
   } = usePlaybackQueryStore();
   const { data: track } = useTracks(currentTrack!);
+
+  useHotkeys("space", () => togglePlayback(), { preventDefault: true });
 
   return (
     <>
