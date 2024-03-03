@@ -1,11 +1,4 @@
-import {
-  Image,
-  Text,
-  VStack,
-  SimpleGrid,
-  Skeleton,
-  SkeletonText,
-} from "@chakra-ui/react";
+import { Image, Text, VStack, SimpleGrid, Skeleton } from "@chakra-ui/react";
 import useNewReleases from "../hooks/useNewReleases";
 import Summary from "./Summary";
 import { Link } from "react-router-dom";
