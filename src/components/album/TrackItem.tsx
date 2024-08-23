@@ -12,8 +12,11 @@ interface Props {
 }
 
 const TrackItem = ({ id, name, explicit, artists, duration, num }: Props) => {
-  const { currentTrack, togglePlayback, setCurrentTrack } =
-    usePlaybackQueryStore();
+  const {
+    playbackState: { currentTrack },
+    togglePlayback,
+    setCurrentTrack,
+  } = usePlaybackQueryStore();
   return (
     <>
       <HStack

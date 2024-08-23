@@ -12,7 +12,9 @@ import usePlaybackQueryStore from "../../queries/playback-store";
 import { Link } from "react-router-dom";
 
 const CurrentTrack = () => {
-  const { currentTrack } = usePlaybackQueryStore();
+  const {
+    playbackState: { currentTrack },
+  } = usePlaybackQueryStore();
   const { data: track, isLoading, error } = useTracks(currentTrack!);
 
   if (isLoading)

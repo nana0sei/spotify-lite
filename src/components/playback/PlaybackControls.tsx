@@ -10,7 +10,10 @@ import useTracks from "../../hooks/useTrack";
 import { useHotkeys } from "react-hotkeys-hook";
 
 const PlaybackControls = () => {
-  const { togglePlayback, isPlaying, currentTrack } = usePlaybackQueryStore();
+  const {
+    togglePlayback,
+    playbackState: { isPlaying, currentTrack },
+  } = usePlaybackQueryStore();
   const { data: track } = useTracks(currentTrack!);
 
   useHotkeys("space", () => togglePlayback(), { preventDefault: true });
