@@ -28,11 +28,8 @@ const PlaylistTrackItem = ({
   explicit,
   album,
 }: Props) => {
-  const {
-    playbackState: { currentTrack },
-    togglePlayback,
-    setCurrentTrack,
-  } = usePlaybackQueryStore();
+  const { currentTrack, togglePlayback, setCurrentTrack } =
+    usePlaybackQueryStore();
   return (
     <>
       <HStack
